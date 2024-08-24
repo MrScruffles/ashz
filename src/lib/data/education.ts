@@ -2,18 +2,6 @@ import Assets from './assets';
 import type { Education } from '../types';
 
 export const items: Array<Education> = [
-	{
-        degree: 'High School Diploma',
-        description: '',
-        location: 'Charlotte, NC, USA',
-        logo: Assets.Unknown,
-        name: '',
-        organization: 'Myers Park High School',
-        period: { from: new Date(2018, 7, 1), to: new Date(2022, 5, 1) },
-        shortDescription: 'Graduated with a GPA of 4.32',
-        slug: 'myers-park-high-school',
-        subjects: ['Mathematics', 'Physics', 'Computer Science', 'English', 'History']
-    },
     {
         degree: 'Bachelor of Science in Computer Science',
         description: '',
@@ -26,6 +14,18 @@ export const items: Array<Education> = [
         slug: 'unc-charlotte-computer-science',
         subjects: ['C', 'Python', 'Java', 'Data Structures', 'Algorithms', 'Operating Systems', 'Computer Networks', 'Software Engineering']
     },
+    {
+        degree: 'High School Diploma',
+        description: '',
+        location: 'Charlotte, NC, USA',
+        logo: Assets.Unknown,
+        name: '',
+        organization: 'Myers Park High School',
+        period: { from: new Date(2018, 7, 1), to: new Date(2022, 5, 1) },
+        shortDescription: 'Graduated with a GPA of 4.32',
+        slug: 'myers-park-high-school',
+        subjects: ['Mathematics', 'Physics', 'Computer Science', 'English', 'History']
+    }
 ];
 
 export const title = 'Education';
