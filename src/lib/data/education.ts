@@ -3,29 +3,29 @@ import type { Education } from '../types';
 
 export const items: Array<Education> = [
 	{
-		degree: 'Bachelor degree of Computer Science',
-		description: '',
-		location: 'Tunisia',
-		logo: Assets.Unknown,
-		name: '',
-		organization: 'ISTIC',
-		period: { from: new Date(2020, 0, 1), to: new Date(2022, 5, 1) },
-		shortDescription: '',
-		slug: 'dummy-education-item',
-		subjects: ['C', 'Algorithm', 'Algebra', 'Python', 'C++', 'Java', 'English']
-	},
-	{
-		degree: 'PhD of Computer Science',
-		description: '',
-		location: 'USA',
-		logo: Assets.Unknown,
-		name: '',
-		organization: 'MIT',
-		period: { from: new Date(2023, 0, 1) },
-		shortDescription: '',
-		slug: 'dummy-education-item-2',
-		subjects: ['Assembly', 'Rust', 'Computer Architecture', 'Algorithms and Data structures']
-	}
+        degree: 'High School Diploma',
+        description: '',
+        location: 'Charlotte, NC, USA',
+        logo: Assets.Unknown,
+        name: '',
+        organization: 'Myers Park High School',
+        period: { from: new Date(2018, 7, 1), to: new Date(2022, 5, 1) },
+        shortDescription: 'Graduated with a GPA of 4.32',
+        slug: 'myers-park-high-school',
+        subjects: ['Mathematics', 'Physics', 'Computer Science', 'English', 'History']
+    },
+    {
+        degree: 'Bachelor of Science in Computer Science',
+        description: '',
+        location: 'Charlotte, NC, USA',
+        logo: Assets.Unknown,
+        name: 'Zahabiuon, Ash',
+        organization: 'University of North Carolina at Charlotte',
+        period: { from: new Date(2022, 7, 1), to: new Date(2025, 5, 1) },
+        shortDescription: 'Major: Computer Science | Minor: Computer Engineering',
+        slug: 'unc-charlotte-computer-science',
+        subjects: ['C', 'Python', 'Java', 'Data Structures', 'Algorithms', 'Operating Systems', 'Computer Networks', 'Software Engineering']
+    },
 ];
 
 export const title = 'Education';
