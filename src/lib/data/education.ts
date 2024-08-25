@@ -4,7 +4,7 @@ import type { Education } from '../types';
 export const items: Array<Education> = [
     {
         degree: 'Bachelor of Science in Computer Science',
-        description: '',
+        description: 'Senior | Graduating May 2025',
         location: 'Charlotte, NC, USA',
         logo: Assets.Unknown,
         name: 'Zahabiuon, Ash',
