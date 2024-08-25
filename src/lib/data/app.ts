@@ -1,1 +1,1 @@
-export const titleSuffix = 'Ash Zahabiuon';
+export const titleSuffix = 'Ash Z.';
