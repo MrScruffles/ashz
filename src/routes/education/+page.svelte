@@ -74,6 +74,13 @@
 										<UIcon icon="i-carbon-time" />
 										{computeExactDuration(education.period.from, education.period.to)}
 									</div>
+									{#if education.description}
+										<CardDivider />
+										<div class="row items-center gap-2">
+											<UIcon icon="i-carbon-information" />
+											{education.description}
+										</div>
+									{/if}
 									<CardDivider />
 								</div>
 								<div class="row flex-wrap gap-1">
