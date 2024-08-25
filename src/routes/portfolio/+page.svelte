@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { items, title } from '@data/projects';
+	import { items, title } from '@data/portfolio';
 	import * as skills from '@data/skills';
 	import { onMount } from 'svelte';
 
@@ -71,7 +71,7 @@
 </script>
 
 <SearchPage {title} on:search={onSearch}>
-	<div class="projects-filters">
+	<div class="portfolio-filters">
 		{#each filters as tech}
 			<Chip active={tech.isSelected} classes={'text-0.8em'} on:click={() => onSelected(tech.slug)}
 				>{tech.name}</Chip
@@ -84,7 +84,7 @@
 			<p class="font-300">Could not find anything...</p>
 		</div>
 	{:else}
-		<div class="projects-list mt-5">
+		<div class="portfolio-list mt-5">
 			{#each displayed as project}
 				<ProjectCard {project} />
 			{/each}
@@ -93,7 +93,7 @@
 </SearchPage>
 
 <style lang="scss">
-	.projects-list {
+	.portfolio-list {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 20px;

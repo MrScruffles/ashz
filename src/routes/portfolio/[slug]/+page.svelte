@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { getAssetURL } from '$lib/data/assets';
-	import { title } from '@data/projects';
+	import { title } from '@data/portfolio';
 
 	import type { Project } from '$lib/types';
 

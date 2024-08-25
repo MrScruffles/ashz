@@ -4,7 +4,7 @@
 	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
 	import * as experiences from '@data/experience';
-	import * as projects from '@data/projects';
+	import * as portfolio from '@data/portfolio';
 	import * as skills from '@data/skills';
 
 	import type { Icon, Item, Skill } from '$lib/types';
@@ -36,11 +36,11 @@
 
 		// filter
 		result.push(
-			...filterItemsByQuery(projects.items, query).map<SearchResultItem>((data) => ({
+			...filterItemsByQuery(portfolio.items, query).map<SearchResultItem>((data) => ({
 				data,
 				icon: 'i-carbon-cube',
 				name: data.name,
-				to: `projects/${data.slug}`
+				to: `portfolio/${data.slug}`
 			}))
 		);
 

@@ -7,8 +7,7 @@ export const name = 'Ash';
 
 export const lastName = 'Zahabiuon';
 
-export const description =
-	'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti, rerum. Debitis accusantium deleniti enim iste dignissimos? Similique, exercitationem! Odit vero, numquam quae ratione maxime sunt reiciendis laudantium quaerat iure ipsum!';
+export const description = "I'm a Computer Science major with a minor in Computer Engineering at the University of North Carolina at Charlotte. I’m passionate about technology and constantly learning new skills to expand my knowledge in the field!"
 
 export const links: Array<{ platform: Platform; link: string }> = [
 	{ platform: Platform.GitHub, link: 'https://github.com/MrScruffles/' },

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { title } from '@data/skills';
-	import * as projects from '@data/projects';
+	import * as portfolio from '@data/portfolio';
 	import * as experiences from '@data/experience';
 
 	import { base } from '$app/paths';
@@ -21,13 +21,13 @@
 		display: string;
 		name: string;
 		img: string;
-		type: 'projects' | 'experience';
+		type: 'portfolio' | 'experience';
 		url: string;
 	};
 
 	export let data: { skill?: Skill };
 
-	const getRelatedProjects = (): Array<Related> => {
+	const getRelatedPortfolio = (): Array<Related> => {
 		const out: Array<Related> = [];
 
 		const skill = data.skill;
@@ -36,14 +36,14 @@
 			return [];
 		}
 
-		projects.items.forEach((item) => {
+		portfolio.items.forEach((item) => {
 			if (item.skills.some((tech) => tech.slug === skill.slug)) {
 				out.push({
 					img: getAssetURL(item.logo),
 					display: `${item.name} (${item.type})`,
 					name: item.name,
-					type: 'projects',
-					url: `/projects/${item.slug}`
+					type: 'portfolio',
+					url: `/portfolio/${item.slug}`
 				});
 			}
 		});
@@ -65,7 +65,7 @@
 
 	$: computedTitle = data.skill ? `${data.skill.name} - ${title}` : title;
 
-	$: related = data.skill ? getRelatedProjects() : [];
+	$: related = data.skill ? getRelatedPortfolio() : [];
 </script>
 
 <TabTitle title={computedTitle} />

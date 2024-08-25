@@ -1,4 +1,4 @@
-import { items } from '@data/projects';
+import { items } from '@data/portfolio';
 
 export function load({ params }: { params: Record<string, string> }) {
 	if (params.slug) {
