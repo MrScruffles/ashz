@@ -16,7 +16,7 @@ export const items: Array<Project> = [
     period: {
       from: new Date('2021-11-13'),
     },
-    skills: getSkills('unreal-engine', 'ue4', 'blueprints'),
+    skills: getSkills('unreal-engine', 'ue4', 'blueprints', 'cpp'),
     type: 'Game Development',
   },
 
@@ -82,7 +82,7 @@ export const items: Array<Project> = [
     period: {
       from: new Date(),
     },
-    skills: getSkills('engineering', 'hardware', 'software'),
+    skills: getSkills('engineering', 'hardware', 'software', 'cpp'),
     type: 'Academic',
   },
   {
@@ -98,7 +98,7 @@ export const items: Array<Project> = [
     period: {
       from: new Date(),
     },
-    skills: getSkills('c++', 'systems-programming', 'low-level-operations'),
+    skills: getSkills('c++', 'systems-programming', 'low-level-operations', 'cpp'),
     type: 'Academic',
   },
   {
@@ -162,7 +162,7 @@ export const items: Array<Project> = [
     period: {
       from: new Date('2022-04-14'),
     },
-    skills: getSkills('javascript', 'lua', 'fullstack'),
+    skills: getSkills('js', 'lua', 'fullstack'),
     type: 'Full-Stack Development',
   },
   {
@@ -177,7 +177,7 @@ export const items: Array<Project> = [
     period: {
       from: new Date(),
     },
-    skills: getSkills('javascript', 'backend'),
+    skills: getSkills('js', 'backend'),
     type: 'Backend Development',
   },
   {
@@ -193,7 +193,7 @@ export const items: Array<Project> = [
     period: {
       from: new Date('2023-07-09'),
     },
-    skills: getSkills('c#', '.net', 'software-engineering'),
+    skills: getSkills('c#', '.net', 'software-engineering', 'csharp'),
     type: 'Full-Stack Development',
   },
 
@@ -210,7 +210,7 @@ export const items: Array<Project> = [
     period: {
       from: new Date('2022-09-28'),
     },
-    skills: getSkills('javascript', 'testing', 'client-side-development'),
+    skills: getSkills('js', 'testing', 'client-side-development'),
     type: 'Web Development',
   },
 ];
