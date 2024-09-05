@@ -4,24 +4,21 @@ import type { Project } from '../types';
 
 export const items: Array<Project> = [
 
-    {
-      slug: 'roblox-iphone',
-      color: '#999999',
-      description:
-        'A detailed project where an iPhone is fully scripted inside Roblox, showcasing my skills in game development, Lua scripting, and ui/uix creation.',
-      shortDescription: 'iPhone project in Roblox with detailed scripting and modeling.',
-      links: [{ to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/iPhoneUIX.mp4', label: 'Video' }],
-      logo: Assets.LuaU,
-      name: 'Roblox iPhone Project',
-      period: {
-        from: new Date('2024-09-05'),
-      },
-      skills: getSkills('luau', 'roblox', 'game-development'),
-      type: 'Game Development',
-      screenshots: [
-          { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/iPhoneImage1.png', label: 'iPhone Home-Screen' },
-          { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/iPhoneWalletPreview.mp4', label: 'Wallet Preview' },
-      ]
+  {
+    slug: 'roblox-iphone',
+    color: '#999999',
+    description: 'A detailed project where an iPhone is fully scripted inside Roblox, showcasing my skills in game development, Lua scripting, and ui/uix creation.',
+    shortDescription: 'iPhone project in Roblox with detailed scripting and modeling.',
+    links: [{ to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/iPhoneUIX.mp4', label: 'Video' }],
+    logo: Assets.LuaU,
+    name: 'Roblox iPhone Project',
+    period: { from: new Date('2024-09-05') },
+    skills: getSkills('luau', 'roblox', 'game-development'),
+    type: 'Game Development',
+    screenshots: [
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/iPhoneImage1.png', label: 'iPhone Home-Screen' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/iPhoneUIX.mp4', label: 'Wallet Preview', thumbnail: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/iPhoneImage1.png' }
+    ]
   },
 
   {
