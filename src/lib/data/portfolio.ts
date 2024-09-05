@@ -19,7 +19,8 @@ export const items: Array<Project> = [
       skills: getSkills('luau', 'roblox', 'game-development'),
       type: 'Game Development',
       screenshots: [
-          { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/iPhoneImage1.png', label: 'iPhone Model' },
+          { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/iPhoneImage1.png', label: 'iPhone Home-Screen' },
+          { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/iPhoneWalletPreview.png', label: 'Wallet Preview' },
       ]
   },
 
