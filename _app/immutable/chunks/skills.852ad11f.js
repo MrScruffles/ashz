@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.436b08ac.js";const m=`# Svelte
+import{A as e}from"./UIcon.637d92ee.js";const m=`# Svelte
 
 ---
 
