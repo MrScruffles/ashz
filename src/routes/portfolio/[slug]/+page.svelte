@@ -19,6 +19,9 @@
 
 	const screenshots = data.project?.screenshots ?? [];
 
+	// To track the video state for each item
+	let showVideos: boolean[] = [];
+
 	let screenIndex: number | undefined = undefined;
 
 	$: screenshot =
@@ -92,62 +95,46 @@
 					<CardDivider />
 				</div>
 				{#if screenshots.length > 0}
-					<div
-						class="px-10px grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-t-10 "
-					>
-					{#each screenshots as item, index}
-					<!-- Check if the screenshot is a video or an image -->
-					{#if item.src.endsWith('.mp4') || item.src.endsWith('.webm')}
-						<!-- Render video thumbnail first, then show the video when clicked -->
-						{#if item.thumbnail}
-							<!-- Show thumbnail as an image -->
-							<div
-								class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px"
-								on:click={() => (screenIndex = index)}
-								on:keydown
-								on:keypress
-								on:keyup
-							>
+					<div class="px-10px grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-t-10">
+						{#each screenshots as item, index}
+							<!-- Check if the screenshot is a video or an image -->
+							{#if item.src.endsWith('.mp4') || item.src.endsWith('.webm')}
+								{#if showVideos[index]}
+									<!-- Render the video after thumbnail click -->
+									<div class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px">
+										<video class="w-100% aspect-video" controls autoplay>
+											<source src={item.src} type="video/mp4" />
+											Your browser does not support the video tag.
+										</video>
+										<p class="text-[var(--tertiary-text)] font-300">{item.label}</p>
+									</div>
+								{:else}
+									<!-- Render the thumbnail first -->
+									<div
+										class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px"
+										on:click={() => { showVideos[index] = true; }}
+									>
+										<div
+											class="screenshot aspect-video bg-contain w-100% cursor-pointer"
+											style={`background-image: url(${item.thumbnail});`}
+										/>
+										<p class="text-[var(--tertiary-text)] font-300">{item.label}</p>
+									</div>
+								{/if}
+							{:else}
+								<!-- Render image -->
 								<div
-									class="screenshot aspect-video bg-contain w-100% cursor-pointer"
-									style={`background-image: url(${item.thumbnail});`}
-								/>
-								<p class="text-[var(--tertiary-text)] font-300">{item.label}</p>
-							</div>
-						{:else}
-							<!-- If no thumbnail, display the video directly -->
-							<div
-								class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px"
-								on:click={() => (screenIndex = index)}
-								on:keydown
-								on:keypress
-								on:keyup
-							>
-								<video class="w-100% aspect-video" controls>
-									<source src={item.src} type="video/mp4" />
-									Your browser does not support the video tag.
-								</video>
-								<p class="text-[var(--tertiary-text)] font-300">{item.label}</p>
-							</div>
-						{/if}
-					{:else}
-						<!-- Render image -->
-						<div
-							class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px"
-							on:click={() => (screenIndex = index)}
-							on:keydown
-							on:keypress
-							on:keyup
-						>
-							<div
-								class="screenshot aspect-video bg-contain w-100% cursor-pointer"
-								style={`background-image: url(${item.src});`}
-							/>
-							<p class="text-[var(--tertiary-text)] font-300">{item.label}</p>
-						</div>
-					{/if}
-				{/each}
-	
+									class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px"
+									on:click={() => (screenIndex = index)}
+								>
+									<div
+										class="screenshot aspect-video bg-contain w-100% cursor-pointer"
+										style={`background-image: url(${item.src});`}
+									/>
+									<p class="text-[var(--tertiary-text)] font-300">{item.label}</p>
+								</div>
+							{/if}
+						{/each}
 					</div>
 				{:else}
 					<div class="p-5 col-center gap-3 m-y-auto text-[var(--border)]">
@@ -159,6 +146,7 @@
 		</div>
 	{/if}
 </div>
+
 <Screenshot {screenshot} onClose={() => (screenIndex = undefined)} />
 
 <style lang="scss">
