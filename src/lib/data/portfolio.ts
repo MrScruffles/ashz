@@ -10,7 +10,7 @@ export const items: Array<Project> = [
       description:
         'A detailed project where an iPhone is fully scripted inside Roblox, showcasing my skills in game development, Lua scripting, and ui/uix creation.',
       shortDescription: 'iPhone project in Roblox with detailed scripting and modeling.',
-      links: [{ to: 'static/screenshots/iPhoneUIX.mp4', label: 'Video' }],
+      links: [{ to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/iPhoneUIX.mp4', label: 'Video' }],
       logo: Assets.LuaU,
       name: 'Roblox iPhone Project',
       period: {
