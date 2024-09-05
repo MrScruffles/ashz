@@ -21,7 +21,7 @@ export const items: Array<Project> = [
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/iPhoneCameraWorkingPreview.png', label: 'Camera Function Preview' , thumbnail: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/iPhoneImage2.png' },
     ]
   },
-
+ 
   {
     slug: 'scuffl-card-game',
     color: '#007acc',
