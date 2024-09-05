@@ -97,28 +97,17 @@
 						{#each screenshots as item, index}
 							<!-- Check if the screenshot is a video or an image -->
 							{#if item.src.endsWith('.mp4') || item.src.endsWith('.webm')}
-								{#if showVideos[index]}
-									<!-- Render the video after thumbnail click -->
-									<div class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px">
-										<video class="w-100% aspect-video" controls autoplay>
-											<source src={item.src} type="video/mp4" />
-											Your browser does not support the video tag.
-										</video>
-										<p class="text-[var(--tertiary-text)] font-300">{item.label}</p>
-									</div>
-								{:else}
-									<!-- Render the thumbnail for the video -->
+								<!-- Render the thumbnail for the video -->
+								<div
+									class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px"
+									on:click={() => (screenIndex = index)} <!-- Opens the video in modal -->
+								>
 									<div
-										class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px"
-										on:click={() => { showVideos[index] = true; }}
-									>
-										<div
-											class="screenshot aspect-video bg-contain w-100% cursor-pointer"
-											style={`background-image: url(${item.thumbnail});`}
-										/>
-										<p class="text-[var(--tertiary-text)] font-300">{item.label}</p>
-									</div>
-								{/if}
+										class="screenshot aspect-video bg-contain w-100% cursor-pointer"
+										style={`background-image: url(${item.thumbnail});`}
+									/>
+									<p class="text-[var(--tertiary-text)] font-300">{item.label}</p>
+								</div>
 							{:else}
 								<!-- Render the image and open it in a modal on click -->
 								<div
@@ -145,8 +134,22 @@
 	{/if}
 </div>
 
-<!-- Image modal that opens when an image is clicked -->
-<Screenshot {screenshot} onClose={() => (screenIndex = undefined)} />
+<!-- Video or Image modal that opens when clicked -->
+{#if screenshot && screenshot.src.endsWith('.mp4')}
+	<!-- Video modal -->
+	<div class="modal-background" on:click={() => (screenIndex = undefined)}>
+		<div class="modal-content" on:click|stopPropagation>
+			<video class="w-full h-auto" controls autoplay>
+				<source src={screenshot.src} type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
+		</div>
+		<button class="close-modal" on:click={() => (screenIndex = undefined)}>Close</button>
+	</div>
+{:else if screenshot}
+	<!-- Image modal -->
+	<Screenshot {screenshot} onClose={() => (screenIndex = undefined)} />
+{/if}
 
 <style lang="scss">
 	.screenshot {
@@ -158,5 +161,37 @@
 		&:hover {
 			background-size: 120%;
 		}
+	}
+
+	.modal-background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.7);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.modal-content {
+		background-color: #fff;
+		padding: 10px;  /* Reduced padding */
+		border-radius: 5px;  /* Reduced border size */
+		width: 90%;
+		max-width: 900px;
+		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+	}
+
+	.close-modal {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		background: none;
+		border: none;
+		color: white;
+		font-size: 2em;
+		cursor: pointer;
 	}
 </style>
