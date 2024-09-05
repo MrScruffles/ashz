@@ -93,14 +93,16 @@
 					<CardDivider />
 				</div>
 				{#if screenshots.length > 0}
-					<div class="px-10px grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-t-10">
+					<div
+						class="px-10px grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-t-10"
+					>
 						{#each screenshots as item, index}
 							<!-- Check if the screenshot is a video or an image -->
 							{#if item.src.endsWith('.mp4') || item.src.endsWith('.webm')}
 								<!-- Render the thumbnail for the video -->
 								<div
 									class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px"
-									on:click={() => (screenIndex = index)} <!-- Opens the video in modal -->
+									on:click={() => (screenIndex = index)}
 								>
 									<div
 										class="screenshot aspect-video bg-contain w-100% cursor-pointer"
@@ -112,7 +114,7 @@
 								<!-- Render the image and open it in a modal on click -->
 								<div
 									class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px"
-									on:click={() => (screenIndex = index)} <!-- Opens the image in a modal -->
+									on:click={() => (screenIndex = index)}
 								>
 									<div
 										class="screenshot aspect-video bg-contain w-100% cursor-pointer"
@@ -176,12 +178,15 @@
 	}
 
 	.modal-content {
-		background-color: #fff;
-		padding: 10px;  /* Reduced padding */
-		border-radius: 5px;  /* Reduced border size */
-		width: 90%;
-		max-width: 900px;
-		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.7);
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.close-modal {
