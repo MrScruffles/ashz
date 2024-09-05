@@ -73,6 +73,7 @@ const Assets = {
 	Postcss: a('postcss.svg'),
 	Lua: a('lua.svg'),
 	PHP: a('php.svg'),
+	LuaU: a('luau.svg'),
 };
 
 export default Assets;

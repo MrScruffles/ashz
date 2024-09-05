@@ -3,6 +3,26 @@ import { getSkills } from './skills';
 import type { Project } from '../types';
 
 export const items: Array<Project> = [
+
+    {
+      slug: 'roblox-iphone',
+      color: '#999999',
+      description:
+        'A detailed project where an iPhone is fully scripted inside Roblox, showcasing my skills in game development, Lua scripting, and ui/uix creation.',
+      shortDescription: 'iPhone project in Roblox with detailed scripting and modeling.',
+      links: [{ to: './static/screenshots/iPhoneUIX.mp4', label: 'Video' }],
+      logo: Assets.LuaU,
+      name: 'Roblox iPhone Project',
+      period: {
+        from: new Date('2024-09-05'),
+      },
+      skills: getSkills('lua', 'roblox', 'game-development'),
+      type: 'Game Development',
+      screenshots: [
+          { src: './static/screenshots/iPhoneImage1.png', label: 'iPhone Model' },
+      ]
+  },
+
   {
     slug: 'scuffl-card-game',
     color: '#007acc',
