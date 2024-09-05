@@ -19,9 +19,7 @@
 
 	const screenshots = data.project?.screenshots ?? [];
 
-	// To track the video state for each item
 	let showVideos: boolean[] = [];
-
 	let screenIndex: number | undefined = undefined;
 
 	$: screenshot =
@@ -109,7 +107,7 @@
 										<p class="text-[var(--tertiary-text)] font-300">{item.label}</p>
 									</div>
 								{:else}
-									<!-- Render the thumbnail first -->
+									<!-- Render the thumbnail for the video -->
 									<div
 										class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px"
 										on:click={() => { showVideos[index] = true; }}
@@ -122,10 +120,10 @@
 									</div>
 								{/if}
 							{:else}
-								<!-- Render image -->
+								<!-- Render the image and open it in a modal on click -->
 								<div
 									class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px"
-									on:click={() => (screenIndex = index)}
+									on:click={() => (screenIndex = index)} <!-- Opens the image in a modal -->
 								>
 									<div
 										class="screenshot aspect-video bg-contain w-100% cursor-pointer"
@@ -147,6 +145,7 @@
 	{/if}
 </div>
 
+<!-- Image modal that opens when an image is clicked -->
 <Screenshot {screenshot} onClose={() => (screenIndex = undefined)} />
 
 <style lang="scss">
