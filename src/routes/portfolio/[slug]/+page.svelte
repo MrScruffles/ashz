@@ -178,15 +178,12 @@
 	}
 
 	.modal-content {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
 		background-color: rgba(0, 0, 0, 0.7);
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		padding: 10px; /* Reduced padding */
+		border-radius: 5px; /* Reduced border size */
+		width: 90%;
+		max-width: 900px;
+		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 	}
 
 	.close-modal {
