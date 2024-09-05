@@ -16,7 +16,7 @@ export const items: Array<Project> = [
       period: {
         from: new Date('2024-09-05'),
       },
-      skills: getSkills('lua', 'roblox', 'game-development'),
+      skills: getSkills('luau', 'roblox', 'game-development'),
       type: 'Game Development',
       screenshots: [
           { src: 'static/screenshots/iPhoneImage1.png', label: 'iPhone Model' },
@@ -182,7 +182,7 @@ export const items: Array<Project> = [
     period: {
       from: new Date('2022-04-14'),
     },
-    skills: getSkills('js', 'lua', 'fullstack'),
+    skills: getSkills('js', 'luau', 'fullstack'),
     type: 'Full-Stack Development',
   },
   {
