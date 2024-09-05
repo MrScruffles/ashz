@@ -182,7 +182,7 @@ export const items: Array<Project> = [
     period: {
       from: new Date('2022-04-14'),
     },
-    skills: getSkills('js', 'luau', 'fullstack'),
+    skills: getSkills('js', 'lua', 'fullstack'),
     type: 'Full-Stack Development',
   },
   {
