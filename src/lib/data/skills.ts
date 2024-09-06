@@ -187,7 +187,7 @@ export const items = [
 		name: 'Jupyter',
 		category: 'pro-lang'
 	}),
-		
+
 ] as const;
 
 export const title = 'Skills';

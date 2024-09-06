@@ -75,6 +75,7 @@ const Assets = {
 	PHP: a('php.svg'),
 	LuaU: a('luau.svg'),
 	Jupyter: a('jupyter.svg'),
+	Ruby: a('ruby.svg'),
 };
 
 export default Assets;
