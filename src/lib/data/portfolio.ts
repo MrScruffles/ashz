@@ -16,10 +16,10 @@ export const items: Array<Project> = [
     skills: getSkills('Python', 'Pandas', 'Data Visualization'),
     type: 'Data Analysis',
     screenshots: [
-      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/fall_shootings.png', label: 'Fall Plot' },
-      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/spring_shootings.png', label: 'Spring Plot' },
-      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/summer_shootings.png', label: 'Summer Plot' },
-      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/winter_shootings.png', label: 'Winter Plot' }
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project1/fall_shootings.png', label: 'Fall Plot' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project1/spring_shootings.png', label: 'Spring Plot' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project1/summer_shootings.png', label: 'Summer Plot' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project1/winter_shootings.png', label: 'Winter Plot' }
     ]
   },
   
