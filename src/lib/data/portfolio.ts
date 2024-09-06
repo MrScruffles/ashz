@@ -3,7 +3,27 @@ import { getSkills } from './skills';
 import type { Project } from '../types';
 
 export const items: Array<Project> = [
-
+  {
+    slug: 'school-shootings-analysis',
+    color: '#6666FF',
+    description: 'A comprehensive data analysis project examining trends in school shootings using a Kaggle dataset. The project explores key factors such as the frequency of incidents, type of schools affected, weapons used, and state-by-state comparisons.',
+    shortDescription: 'This data analysis project focuses on investigating various trends in school shootings across the United States using a detailed Kaggle dataset. The dataset includes critical information such as the frequency of shootings, the type of schools affected (ranging from elementary schools to high schools and universities), the weapons involved, and the location of each incident. School shootings have been steadily increasing each year, making this data especially crucial for understanding and addressing the crisis. \n\n Our analysis highlighted not only the yearly rise in incidents but also key factors like the type of schools being targeted and how these incidents have escalated over time. For instance, we observed distinct patterns in weapon choice—rifles often result in higher casualty rates compared to handguns, further emphasizing the need for stricter weapon regulations in school safety policies. \n\n Additionally, we explored the relationship between state-specific gun laws and school shootings, revealing that regions such as Texas and California experience particularly high numbers of shootings, allowing us to investigate potential correlations with local legislation. This also raises important questions about policy solutions, such as whether introducing tighter regulations around assault weapons or increasing school security could help mitigate the issue. \n\n The dataset was meticulously cleaned and organized to allow for a wide range of comparisons. We examined whether regions experience spikes in shootings during specific time periods, such as seasonal fluctuations or yearly trends. Various visualizations were created, including state-by-state comparisons, incident timelines, and representations of how different weapons impact casualties. \n\n By analyzing trends within this dataset, our project uncovers insights that may drive discussions around school safety reforms, aiming to reduce the frequency of such tragedies in the future'.,
+    links: [
+      { to: 'https://www.kaggle.com/datasets/joebeachcapital/school-shootings?resource=download', label: 'Kaggle Dataset'}
+    ],
+    logo: Assets.Python,
+    name: 'School Shootings Data Analysis',
+    period: { from: new Date('2024-09-06') },
+    skills: getSkills('Python', 'Pandas', 'Data Visualization'),
+    type: 'Data Analysis',
+    screenshots: [
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/fall_shootings.png', label: 'Fall Plot' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/spring_shootings.png', label: 'Spring Plot' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/summer_shootings.png', label: 'Summer Plot' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/winter_shootings.png', label: 'Winter Plot' }
+    ]
+  },
+  
   {
     slug: 'roblox-iphone',
     color: '#999999',
