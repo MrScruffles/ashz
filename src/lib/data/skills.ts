@@ -38,57 +38,57 @@ export const items = [
 	defineSkill({
 		slug: 'js',
 		color: 'yellow',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: 'JavaScript is a versatile, high-level programming language commonly used for developing web applications, enabling dynamic interactions on websites. It is an essential skill for front-end development and is increasingly used on the back-end with environments like Node.js.',
 		logo: Assets.JavaScript,
-		name: 'Javascript',
+		name: 'JavaScript',
 		category: 'pro-lang'
 	}),
+	
 	defineSkill({
 		slug: 'ts',
 		color: 'blue',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: 'TypeScript is a superset of JavaScript that adds static types, improving code quality and maintainability by providing early error detection and better tooling. It’s widely used in large-scale applications to enhance JavaScript’s flexibility with strong type checking.',
 		logo: Assets.TypeScript,
-		name: 'Typescript',
+		name: 'TypeScript',
 		category: 'pro-lang'
 	}),
+	
 	defineSkill({
 		slug: 'css',
 		color: 'blue',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: 'CSS (Cascading Style Sheets) is used to design and style web pages by describing how HTML elements should be displayed. It allows developers to create visually engaging layouts with responsive designs and animations.',
 		logo: Assets.CSS,
 		name: 'CSS',
 		category: 'markup-style'
 	}),
+	
 	defineSkill({
 		slug: 'html',
 		color: 'orange',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: 'HTML (HyperText Markup Language) is the standard markup language for creating web pages. It provides the structure of the content on the web and works hand-in-hand with CSS and JavaScript for designing and building websites.',
 		logo: Assets.HTML,
 		name: 'HTML',
 		category: 'markup-style'
 	}),
+	
 	defineSkill({
 		slug: 'sass',
 		color: 'pink',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: 'Sass is a CSS preprocessor that adds power and elegance to basic CSS. It allows for variables, nested rules, and functions, making CSS more maintainable and scalable in large projects.',
 		logo: Assets.Sass,
 		name: 'Sass',
 		category: 'markup-style'
 	}),
+	
 	defineSkill({
 		slug: 'reactjs',
 		color: 'cyan',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: 'React.js is a popular JavaScript library for building user interfaces, especially single-page applications. It allows developers to create reusable UI components, enabling efficient updates and rendering in response to data changes.',
 		logo: Assets.ReactJs,
-		name: 'React Js',
+		name: 'React.js',
 		category: 'library'
 	}),
+	
 	defineSkill({
 		slug: 'svelte',
 		color: 'orange',
@@ -97,89 +97,97 @@ export const items = [
 		name: 'Svelte',
 		category: 'library'
 	}),
+	
 	defineSkill({
 		slug: 'python',
 		color: '#306998',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: 'Python is a high-level, interpreted programming language known for its readability and versatility. It is used across various fields including web development, data analysis, artificial intelligence, and scientific computing.',
 		logo: Assets.Python,
 		name: 'Python',
 		category: 'pro-lang'
 	}),
+	
 	defineSkill({
 		slug: 'java',
 		color: '#00758f',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: 'Java is a high-level, class-based programming language widely used for building large-scale applications. Its portability and extensive libraries make it a popular choice for server-side development and Android applications.',
 		logo: Assets.Java,
 		name: 'Java',
 		category: 'pro-lang'
 	}),
+	
 	defineSkill({
 		slug: 'cpp',
 		color: '#00599C',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: 'C++ is a general-purpose programming language that offers both high-level and low-level capabilities. It’s widely used in system/software development, game development, and performance-critical applications.',
 		logo: Assets.Cpp,
 		name: 'C++',
 		category: 'pro-lang'
 	}),
+	
 	defineSkill({
 		slug: 'csharp',
 		color: '#178600',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: 'C# is a modern, object-oriented programming language developed by Microsoft. It is primarily used for developing desktop applications, web services, and games (using the Unity engine).',
 		logo: Assets.Csharp,
 		name: 'C#',
 		category: 'pro-lang'
 	}),
+	
 	defineSkill({
 		slug: 'c',
 		color: '#A8B9CC',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: 'C is a powerful, general-purpose programming language that provides low-level access to memory and efficient performance. It’s widely used for system programming, embedded systems, and applications that require direct interaction with hardware.',
 		logo: Assets.C,
 		name: 'C',
 		category: 'pro-lang'
-	}),	
+	}),
+	
 	defineSkill({
 		slug: 'php',
 		color: '#777BB4',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: 'PHP is a widely-used open-source scripting language especially suited for web development. It is fast, flexible, and pragmatic, powering everything from blogs to popular websites like WordPress and Facebook.',
 		logo: Assets.PHP,
 		name: 'PHP',
 		category: 'pro-lang'
 	}),
+	
 	defineSkill({
 		slug: 'ruby',
 		color: '#CC342D',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
-		logo: Assets.Rust,
+		description: 'Ruby is a dynamic, open-source programming language with a focus on simplicity and productivity. Known for its elegant syntax, it is popular for web development, particularly with the Ruby on Rails framework.',
+		logo: Assets.Ruby,
 		name: 'Ruby',
 		category: 'pro-lang'
 	}),
+	
 	defineSkill({
 		slug: 'lua',
 		color: '#000080',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
+		description: 'Lua is a lightweight, high-level programming language designed for embedded systems and game development. It is known for its simplicity, flexibility, and fast execution.',
 		logo: Assets.Lua,
 		name: 'Lua',
 		category: 'pro-lang'
-	}),	
+	}),
+	
 	defineSkill({
 		slug: 'luau',
 		color: '#000080',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
-		logo: Assets.LuaU,  // Ensure that you have an asset for LuaU
-		name: 'LuaU',
+		description: 'Luau is a derivative of Lua designed to improve type safety and performance. It is widely used in game development, particularly for scripting in Roblox.',
+		logo: Assets.LuaU,
+		name: 'Luau',
 		category: 'pro-lang'
 	}),
 	
-	
+	defineSkill({
+		slug: 'jupyter',
+		color: '#ff8b33',
+		description: 'Jupyter is an open-source platform for creating and sharing live code, visualizations, and interactive data science notebooks. It supports languages like Python, R, and Julia, and is widely used in data science and machine learning workflows.',
+		logo: Assets.Jupyter,
+		name: 'Jupyter',
+		category: 'pro-lang'
+	}),
+		
 ] as const;
 
 export const title = 'Skills';

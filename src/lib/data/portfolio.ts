@@ -11,10 +11,10 @@ export const items: Array<Project> = [
       { to: 'https://www.kaggle.com/datasets/joebeachcapital/school-shootings?resource=download', label: 'Kaggle Dataset'},
       { to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project1/Project1.zip', label: 'Notebook Files (ZIP)' },
     ],
-    logo: Assets.Python,
+    logo: Assets.Jupyter,
     name: 'School Shootings Data Analysis',
     period: { from: new Date('2024-09-06') },
-    skills: getSkills('Python', 'Pandas', 'Data Visualization'),
+    skills: getSkills('jupyter', 'Python', 'Pandas', 'Data Visualization'),
     type: 'Data Analysis',
     screenshots: [
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project1/fall_shootings.png', label: 'Fall Plot' },
