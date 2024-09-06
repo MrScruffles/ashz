@@ -2,7 +2,6 @@
 	import { base } from '$app/paths';
 	import { getAssetURL } from '$lib/data/assets';
 	import { title } from '@data/portfolio';
-
 	import type { Project } from '$lib/types';
 
 	import CardLogo from '$lib/components/Card/CardLogo.svelte';
@@ -21,6 +20,13 @@
 
 	let showVideos: boolean[] = [];
 	let screenIndex: number | undefined = undefined;
+
+	// Process the description to replace \n\n with <br> tags
+	const formatDescription = (description: string | undefined): string => {
+		if (!description) return "";
+		// Replace instances of \n\n with <br>
+		return description.replace(/\n\n/g, '<br><br>');
+	};
 
 	$: screenshot =
 		typeof screenIndex !== 'undefined' && screenshots[screenIndex]
@@ -81,7 +87,8 @@
 			<div class="pt-3 pb-1 overflow-x-hidden w-full">
 				<div class="px-10px m-y-5">
 					{#if data.project.description}
-						<Markdown content={data.project.description} />
+						<!-- Use the formatted description with <br> handling -->
+						<Markdown content={formatDescription(data.project.description)} />
 					{:else}
 						<div class="p-5 col-center gap-3 m-y-auto text-[var(--border)]">
 							<UIcon icon="i-carbon-text-font" classes="text-3.5em" />
