@@ -14,7 +14,7 @@ export const items: Array<Project> = [
     ],
     logo: Assets.Jupyter,
     name: 'Apple Stock Analysis',
-    period: { from: new Date('2024-09-06') },
+    period: { from: new Date('2024-10-02') },
     skills: getSkills('jupyter', 'Python', 'Pandas', 'Data Visualization'),
     type: 'Data Analysis',
     screenshots: [
