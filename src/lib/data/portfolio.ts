@@ -13,7 +13,7 @@ export const items: Array<Project> = [
       // { to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project1/Project1.zip', label: 'Notebook Files (ZIP)' }
     ],
     logo: Assets.Jupyter,
-    name: 'School Shootings Data Analysis',
+    name: 'Apple Stock Analysis',
     period: { from: new Date('2024-09-06') },
     skills: getSkills('jupyter', 'Python', 'Pandas', 'Data Visualization'),
     type: 'Data Analysis',
