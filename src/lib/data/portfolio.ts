@@ -18,10 +18,10 @@ export const items: Array<Project> = [
     skills: getSkills('jupyter', 'Python', 'Pandas', 'Data Visualization'),
     type: 'Data Analysis',
     screenshots: [
-      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project2/adjusted_closing_price.png', label: 'Fall Plot' },
-      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project2/average_monthly_trading_value.png', label: 'Spring Plot' },
-      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project2/daily_returns_apple.png', label: 'Summer Plot' },
-      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project2/distribution_daily_returns.png', label: 'Winter Plot' }
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project2/adjusted_closing_price.png', label: 'Closing Plot' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project2/average_monthly_trading_value.png', label: 'Monthly Plot' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project2/daily_returns_apple.png', label: 'Returns Plot' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project2/distribution_daily_returns.png', label: 'Daily Returns Plot' }
     ]
   }, 
   {
