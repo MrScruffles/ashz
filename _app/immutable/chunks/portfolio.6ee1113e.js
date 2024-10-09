@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.8b50b9d3.js";import{g as t}from"./skills.185988ec.js";const i=[{slug:"apple-stock-analysis",color:"#ff8b00",shortDescription:"A comprehensive data analysis project examining trends in Apple Inc.s stock prices using a Kaggle dataset. The project explores key factors such as historical stock prices, daily returns, trading volumes, and seasonal trends to understand the companys market performance over time.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 2, we are going through this data analysis project which focuses on investigating various trends in Apple Inc stock prices over time using a detailed Kaggle dataset.
+import{A as e}from"./UIcon.ec04fe90.js";import{g as t}from"./skills.81873e1e.js";const i=[{slug:"apple-stock-analysis",color:"#ff8b00",shortDescription:"A comprehensive data analysis project examining trends in Apple Inc.s stock prices using a Kaggle dataset. The project explores key factors such as historical stock prices, daily returns, trading volumes, and seasonal trends to understand the companys market performance over time.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 2, we are going through this data analysis project which focuses on investigating various trends in Apple Inc stock prices over time using a detailed Kaggle dataset.
 
 <h2>Introduction</h2>
 Apple Inc. is a multinational technology company renowned for its innovative products and services, including the iPhone, iPad, Mac computers, and various software solutions. Since its inception, Apple has become a leading player in the tech industry, and its stock performance reflects its market influence and financial health. Analyzing Apple stock data over an extended period provides valuable insights into market trends, investor sentiment, and the company's growth trajectory. This project aims to explore historical stock data to identify patterns, understand fluctuations, and assess factors that have influenced Apple's stock prices.
@@ -127,7 +127,6 @@ These models were chosen based on their ability to handle classification problem
 - **Random Forest** was chosen due to its robustness and ability to handle feature interactions and nonlinear relationships, which are common in financial data.
 
 <h2>Evaluation</h2>
-
 **Performance Metrics**
 
 To evaluate the performance of the classification models, the following metrics were used:
@@ -195,7 +194,6 @@ weighted avg       0.46      0.47      0.46      2581
 - **Confusion Matrix** allows for a visual assessment of where the model is making correct and incorrect predictions.
 
 <h2>Storytelling</h2>
-
 **Insights Gained Through Modeling**
 
 - **Predictive Challenges**: The models faced difficulty accurately predicting stock price movements, highlighting the complexity and stochastic nature of the stock market.
@@ -216,7 +214,6 @@ weighted avg       0.46      0.47      0.46      2581
 Predicting stock price movements remains a challenging task. The moderate performance of the KNN and Random Forest models underscores the inherent unpredictability of the stock market. Factors such as investor sentiment, global economic events, and company-specific news can significantly impact stock prices but are difficult to quantify and incorporate into predictive models.
 
 <h2>Impact</h2>
-
 **Potential Positive Impacts**
 
 - **Enhanced Decision-Making**: The project provides insights that could help investors make more informed decisions by understanding the limitations of predictive models.
