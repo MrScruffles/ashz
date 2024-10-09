@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.25a194b2.js";import{g as t}from"./skills.0099ad4e.js";const i=[{slug:"apple-stock-analysis",color:"#ff8b00",shortDescription:"A comprehensive data analysis project examining trends in Apple Inc.s stock prices using a Kaggle dataset. The project explores key factors such as historical stock prices, daily returns, trading volumes, and seasonal trends to understand the companys market performance over time.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 2, we are going through this data analysis project which focuses on investigating various trends in Apple Inc stock prices over time using a detailed Kaggle dataset.
+import{A as e}from"./UIcon.897e27b3.js";import{g as t}from"./skills.3e761571.js";const i=[{slug:"apple-stock-analysis",color:"#ff8b00",shortDescription:"A comprehensive data analysis project examining trends in Apple Inc.s stock prices using a Kaggle dataset. The project explores key factors such as historical stock prices, daily returns, trading volumes, and seasonal trends to understand the companys market performance over time.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 2, we are going through this data analysis project which focuses on investigating various trends in Apple Inc stock prices over time using a detailed Kaggle dataset.
 
 <h2>Introduction</h2>
 Apple Inc. is a company known for its devices like the iPhone, iPad, Mac computers, and various software solutions. Since its inception, Apple has become a leading player in the tech industry, and its stock performance reflects its market influence and financial health. Analyzing Apple stock data over an extended period provides valuable insights into market trends, investors, and the company's growth trajectory. This project aims to explore historical stock data to identify patterns, understand fluctuations, and look more into the factors that have influenced Apple's stock prices.
@@ -31,7 +31,7 @@ Furthermore, the distribution of daily returns was examined to assess the risk a
 
 Seasonal trends were also explored by analyzing the average monthly trading volumes and adjusted closing prices. It was observed that certain months, such as September and October, exhibited higher trading volumes, potentially correlating with Apple's annual product launch events and year-end financial reports.
 
-Finally, a heatmap of average monthly adjusted close prices over the years was created to visualize long-term trends and identify any seasonal patterns. The heatmap provided a comprehensive view of how the stock performed across different months and years, highlighting periods of significant growth or decline.
+Finally as seen the heatmap of average monthly adjusted close prices over the years was created to visualize long-term trends and identify any seasonal patterns. The heatmap provided a comprehensive view of how the stock performed across different months and years, highlighting periods of significant growth or decline.
 
 <img src="https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project2/average_heatmap.png" alt="Heatmap of Average Monthly Adjusted Close Prices" width="1200">
 
@@ -69,7 +69,7 @@ To gain deeper insights into Apple Inc.'s stock performance over time, various d
 Understanding these patterns is crucial for selecting appropriate models. The presence of trends, seasonality, and volatility indicates that machine learning classification models that can account for these factors are needed. This exploration informs the choice of models and the features to include in the modeling process.
 
 <h2>Modeling (Inside the .ipynb file)</h2>
-To predict the direction of Apple Inc.'s stock price movement—whether it will increase, decrease, or show no change w/machine learning classification algorithms:
+To predict the direction of Apple Inc.'s stock price movement and whether any outcomes will cause it to increase, decrease, or show no change w/machine learning classification algorithms:
 
 1. **K-Nearest Neighbors (KNN)**
 
