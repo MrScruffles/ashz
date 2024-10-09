@@ -11,7 +11,7 @@ export const items: Array<Project> = [
     links: [      
       { to: 'https://www.kaggle.com/datasets/varpit94/apple-stock-data-updated-till-22jun2021?resource=download', label: 'Kaggle Dataset' },
       { to: 'https://github.com/MrScruffles/ashz/blob/f0addc167f775bd4caac31031d07d9c47d1ab220/static/screenshots/Project2/Project_2_Ash_Zahabiuon.ipynb', label: 'Jupiter Notebook File (Download)' }
-      // { to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project1/Project1.zip', label: 'Notebook Files (ZIP)' }
+      { to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project1/Project2.zip', label: 'Entire Project w/ Images (ZIP)' }
     ],
     logo: Assets.Jupyter,
     name: 'Apple Stock Analysis',
