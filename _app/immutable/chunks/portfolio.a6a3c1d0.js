@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.ec04fe90.js";import{g as t}from"./skills.81873e1e.js";const i=[{slug:"apple-stock-analysis",color:"#ff8b00",shortDescription:"A comprehensive data analysis project examining trends in Apple Inc.s stock prices using a Kaggle dataset. The project explores key factors such as historical stock prices, daily returns, trading volumes, and seasonal trends to understand the companys market performance over time.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 2, we are going through this data analysis project which focuses on investigating various trends in Apple Inc stock prices over time using a detailed Kaggle dataset.
+import{A as e}from"./UIcon.4c5ba5b0.js";import{g as t}from"./skills.975e5072.js";const i=[{slug:"apple-stock-analysis",color:"#ff8b00",shortDescription:"A comprehensive data analysis project examining trends in Apple Inc.s stock prices using a Kaggle dataset. The project explores key factors such as historical stock prices, daily returns, trading volumes, and seasonal trends to understand the companys market performance over time.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 2, we are going through this data analysis project which focuses on investigating various trends in Apple Inc stock prices over time using a detailed Kaggle dataset.
 
 <h2>Introduction</h2>
 Apple Inc. is a multinational technology company renowned for its innovative products and services, including the iPhone, iPad, Mac computers, and various software solutions. Since its inception, Apple has become a leading player in the tech industry, and its stock performance reflects its market influence and financial health. Analyzing Apple stock data over an extended period provides valuable insights into market trends, investor sentiment, and the company's growth trajectory. This project aims to explore historical stock data to identify patterns, understand fluctuations, and assess factors that have influenced Apple's stock prices.
@@ -195,13 +195,11 @@ weighted avg       0.46      0.47      0.46      2581
 
 <h2>Storytelling</h2>
 **Insights Gained Through Modeling**
-
 - **Predictive Challenges**: The models faced difficulty accurately predicting stock price movements, highlighting the complexity and stochastic nature of the stock market.
 - **Class Imbalance Impact**: The 'No Change' class was underrepresented, affecting the models' ability to predict this outcome effectively.
 - **Feature Relevance**: Feature importance from the Random Forest model indicated that certain variables significantly influence stock movement predictions.
 
 **Answering Initial Questions**
-
 - **Can we accurately predict stock price movements?**
   - The models achieved moderate accuracy, suggesting that while machine learning can provide some predictive power, there are limitations due to market volatility and external factors not captured in the dataset.
 - **What factors influence stock price movements?**
@@ -215,17 +213,14 @@ Predicting stock price movements remains a challenging task. The moderate perfor
 
 <h2>Impact</h2>
 **Potential Positive Impacts**
-
 - **Enhanced Decision-Making**: The project provides insights that could help investors make more informed decisions by understanding the limitations of predictive models.
 - **Educational Value**: Demonstrates the application of machine learning in finance, offering learning opportunities for data scientists and financial analysts.
 
 **Potential Negative Impacts**
-
 - **Overreliance on Models**: Investors might place undue confidence in model predictions, leading to potential financial losses.
 - **Ethical Concerns**: The use of predictive models could contribute to unfair trading advantages if used by entities with more resources, exacerbating inequalities in the market.
 
 **Social and Ethical Considerations**
-
 - **Market Stability**: Widespread use of similar predictive models could lead to herd behavior, increasing market volatility.
 - **Transparency and Fairness**: Ensuring that predictive tools are accessible and that their limitations are understood is essential to maintain fairness in financial markets.
 
