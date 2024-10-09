@@ -1,10 +1,10 @@
-import{A as e}from"./UIcon.897e27b3.js";import{g as t}from"./skills.3e761571.js";const i=[{slug:"apple-stock-analysis",color:"#ff8b00",shortDescription:"A comprehensive data analysis project examining trends in Apple Inc.s stock prices using a Kaggle dataset. The project explores key factors such as historical stock prices, daily returns, trading volumes, and seasonal trends to understand the companys market performance over time.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 2, we are going through this data analysis project which focuses on investigating various trends in Apple Inc stock prices over time using a detailed Kaggle dataset.
+import{A as e}from"./UIcon.1482f27e.js";import{g as t}from"./skills.c4e5ee16.js";const i=[{slug:"apple-stock-analysis",color:"#ff8b00",shortDescription:"A comprehensive data analysis project examining trends in Apple Inc.s stock prices using a Kaggle dataset. The project explores key factors such as historical stock prices, daily returns, trading volumes, and seasonal trends to understand the companys market performance over time.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 2, we are going through this data analysis project which focuses on investigating various trends in Apple Inc stock prices over time using a detailed Kaggle dataset.
 
 <h2>Introduction</h2>
-Apple Inc. is a company known for its devices like the iPhone, iPad, Mac computers, and various software solutions. Since its inception, Apple has become a leading player in the tech industry, and its stock performance reflects its market influence and financial health. Analyzing Apple stock data over an extended period provides valuable insights into market trends, investors, and the company's growth trajectory. This project aims to explore historical stock data to identify patterns, understand fluctuations, and look more into the factors that have influenced Apple's stock prices.
+Apple Inc. is a company known for its devices like the iPhone, iPad, Mac computers, and various software solutions. Since its inception, Apple which is also one of the leader players in the tech industry, and its stock performance reflects its market influence and financial health. Analyzing Apple stock data over an extended period provides valuable insights into market trends, investors, and the company's growth trajectory. This project aims to explore historical stock data to identify patterns, understand fluctuations, and look more into the factors that have influenced Apple's stock prices.
 
 <h2>Data Description</h2>
-The dataset used for this analysis is sourced from a comprehensive [Kaggle dataset](https://www.kaggle.com/datasets/varpit94/apple-stock-data-updated-till-22jun2021), containing historical stock data of Apple Inc. from **December 12, 1980**, to **June 22, 2021**. The dataset comprises **10,244 observations** and **7 columns**, providing a substantial amount of data to explore. Each observation represents daily stock information, and the columns include variables such as:
+The dataset used for this analysis is sourced a Kaggle dataset [Kaggle dataset](https://www.kaggle.com/datasets/varpit94/apple-stock-data-updated-till-22jun2021), containing stock data of Apple Inc. from **December 12, 1980**, to **June 22, 2021**. The dataset comprises **10,244 observations** and **7 columns**, providing a substantial amount of data to explore. Each observation represents daily stock information, and the columns include variables such as:
 - **Date**: The trading date.
 - **Open**: Opening price of the stock on that day.
 - **High**: Highest price of the stock during the trading day.
@@ -38,7 +38,7 @@ Finally as seen the heatmap of average monthly adjusted close prices over the ye
 By conducting this analysis and creating visualizations, valuable insights were gained into Apple's stock performance. The consistent growth in stock prices underscores the company's strong market position and investor confidence. Understanding these trends is crucial for investors, financial analysts, and stakeholders who rely on historical data to make informed decisions about future investments.
 
 <h2>Data Understanding and Visualization</h2>
-To gain deeper insights into Apple Inc.'s stock performance over time, various data exploration and visualization techniques were applied. These methods aimed to uncover patterns, trends, and anomalies that could inform the modeling process and address the initial questions regarding stock price movements and influencing factors.
+To gain deeper insights into Apple Inc.'s stock performance over time, various data exploration and visualization techniques were applied. These methods used to uncover patterns, trends, and anomalies (edge cases) that could inform the modeling process and address the initial questions regarding stock price movements and influencing factors.
 
 **Exploratory Data Analysis (EDA)**
 - **Descriptive Statistics**: Calculated mean, median, standard deviation, and range for stock prices and trading volumes to understand the data distribution.
@@ -75,7 +75,7 @@ To predict the direction of Apple Inc.'s stock price movement and whether any ou
 
 2. **Random Forest Classifier**
 
-These models were chosen based on their ability to handle classification problems effectively and their interpretability.
+These models were chosen based on their ability to handle classification problems effectively and how easy it is to interpret.
 
 **1. K-Nearest Neighbors (KNN)**
 
@@ -123,7 +123,7 @@ These models were chosen based on their ability to handle classification problem
 
 **Model Selection Rationale**
 
-- **KNN** was selected for its simplicity and effectiveness in classification tasks, providing a baseline to compare with more complex models.
+- **KNN** was selected for its simplicity and effectiveness in classification tasks, which provided a good baseline, and can grab certain aspects of the data to turn into graphs like we did.
 - **Random Forest** was chosen due to its robustness and ability to handle feature interactions and nonlinear relationships, which are common in financial data.
 
 <h2>Evaluation</h2>
@@ -209,7 +209,7 @@ weighted avg       0.46      0.47      0.46      2581
 
 **Narrative**
 
-Now predicting stock price movements remains a challenging task. The moderate performance of the KNN and Random Forest models underscores the unpredictability of the stock market. Factors such as investor sentiment, global economic events, and company-specific news can significantly impact stock prices but are difficult to incorporate into predictive models.
+Now predicting stock price movements remains a challenging task. The performance of the KNN and Random Forest models and the unpredictability of the stock markeet are the leading facctors which can effect things such as investor sentiment, global economic events, and company news can significantly impact stock prices but are difficult to incorporate into predictive models.
 
 <h2>Impact</h2>
 **Potential Positive Impacts**
