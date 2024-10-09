@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.0c61b293.js";import{g as t}from"./skills.4bd5614f.js";const i=[{slug:"apple-stock-analysis",color:"#ff8b00",shortDescription:"A comprehensive data analysis project examining trends in Apple Inc.s stock prices using a Kaggle dataset. The project explores key factors such as historical stock prices, daily returns, trading volumes, and seasonal trends to understand the companys market performance over time.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 2, we are going through this data analysis project which focuses on investigating various trends in Apple Inc stock prices over time using a detailed Kaggle dataset.
+import{A as e}from"./UIcon.21f47b29.js";import{g as t}from"./skills.fd72ba4c.js";const i=[{slug:"apple-stock-analysis",color:"#ff8b00",shortDescription:"A comprehensive data analysis project examining trends in Apple Inc.s stock prices using a Kaggle dataset. The project explores key factors such as historical stock prices, daily returns, trading volumes, and seasonal trends to understand the companys market performance over time.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 2, we are going through this data analysis project which focuses on investigating various trends in Apple Inc stock prices over time using a detailed Kaggle dataset.
 
 <h2>Introduction</h2>
 Apple Inc. is a multinational technology company renowned for its innovative products and services, including the iPhone, iPad, Mac computers, and various software solutions. Since its inception, Apple has become a leading player in the tech industry, and its stock performance reflects its market influence and financial health. Analyzing Apple stock data over an extended period provides valuable insights into market trends, investor sentiment, and the company's growth trajectory. This project aims to explore historical stock data to identify patterns, understand fluctuations, and assess factors that have influenced Apple's stock prices.
@@ -81,6 +81,7 @@ Understanding these patterns is crucial for selecting appropriate models. The pr
 To predict the direction of Apple Inc.'s stock price movement—whether it will increase, decrease, or show no change—the project employed two supervised machine learning classification algorithms:
 
 1. **K-Nearest Neighbors (KNN)**
+
 2. **Random Forest Classifier**
 
 These models were chosen based on their ability to handle classification problems effectively and their interpretability.
@@ -158,7 +159,6 @@ The dataset is relatively balanced between 'Increase' and 'Decrease' classes, wi
 
 - **Classification Report**:
 
-\`\`\`
               precision    recall  f1-score   support
 
     Decrease       0.46      0.51      0.48      1204
@@ -168,7 +168,6 @@ The dataset is relatively balanced between 'Increase' and 'Decrease' classes, wi
     accuracy                           0.47      2581
    macro avg       0.35      0.33      0.33      2581
 weighted avg       0.46      0.47      0.46      2581
-\`\`\`
 
 - **Observations**:
   - The overall accuracy of the KNN model is **47%**.
