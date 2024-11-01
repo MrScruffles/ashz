@@ -14,18 +14,34 @@
 	import CardDivider from '$lib/components/Card/CardDivider.svelte';
 	import Screenshot from '$lib/components/Screenshot/Screenshot.svelte';
 
+	// Import KaTeX
+	import katex from 'katex';
+	import 'katex/dist/katex.min.css';
+
 	export let data: { project?: Project };
 
 	const screenshots = data.project?.screenshots ?? [];
-
 	let showVideos: boolean[] = [];
 	let screenIndex: number | undefined = undefined;
 
-	// Process the description to replace \n\n with <br> tags
+	// Format the description to handle \n\n as <br> and render LaTeX with KaTeX
 	const formatDescription = (description: string | undefined): string => {
 		if (!description) return "";
-		// Replace instances of \n\n with <br>
-		return description.replace(/\n\n/g, '<br><br>');
+
+		// Replace double line breaks with <br><br>
+		let formatted = description.replace(/\n\n/g, '<br><br>');
+
+		// Render LaTeX expressions in $...$ or $$...$$ format using KaTeX
+		formatted = formatted.replace(/\$(.+?)\$/g, (match, p1) => {
+			try {
+				return katex.renderToString(p1, { throwOnError: false });
+			} catch (e) {
+				console.error("KaTeX rendering error:", e);
+				return match;
+			}
+		});
+
+		return formatted;
 	};
 
 	$: screenshot =
@@ -87,7 +103,7 @@
 			<div class="pt-3 pb-1 overflow-x-hidden w-full">
 				<div class="px-10px m-y-5">
 					{#if data.project.description}
-						<!-- Use the formatted description with <br> handling -->
+						<!-- Use the formatted description with LaTeX support -->
 						<Markdown content={formatDescription(data.project.description)} />
 					{:else}
 						<div class="p-5 col-center gap-3 m-y-auto text-[var(--border)]">
