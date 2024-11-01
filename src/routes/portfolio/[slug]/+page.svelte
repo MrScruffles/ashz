@@ -14,32 +14,23 @@
 	import CardDivider from '$lib/components/Card/CardDivider.svelte';
 	import Screenshot from '$lib/components/Screenshot/Screenshot.svelte';
 
-	// Import KaTeX
-	import katex from 'katex';
-	import 'katex/dist/katex.min.css';
-
 	export let data: { project?: Project };
 
 	const screenshots = data.project?.screenshots ?? [];
 	let showVideos: boolean[] = [];
 	let screenIndex: number | undefined = undefined;
 
-	// Format the description to handle \n\n as <br> and render LaTeX with KaTeX
+	// Format the description to handle \n\n as <br> and render LaTeX-like expressions
 	const formatDescription = (description: string | undefined): string => {
 		if (!description) return "";
 
 		// Replace double line breaks with <br><br>
 		let formatted = description.replace(/\n\n/g, '<br><br>');
 
-		// Render LaTeX expressions in $...$ or $$...$$ format using KaTeX
-		formatted = formatted.replace(/\$(.+?)\$/g, (match, p1) => {
-			try {
-				return katex.renderToString(p1, { throwOnError: false });
-			} catch (e) {
-				console.error("KaTeX rendering error:", e);
-				return match;
-			}
-		});
+		// Basic rendering for LaTeX-like expressions within $...$ or $$...$$
+		// Wrap expressions in <span> with a "math" class for styling
+		formatted = formatted.replace(/\$\$([^\$]+)\$\$/g, '<span class="math-block">$1</span>');
+		formatted = formatted.replace(/\$([^\$]+)\$/g, '<span class="math-inline">$1</span>');
 
 		return formatted;
 	};
@@ -218,5 +209,24 @@
 		color: white;
 		font-size: 2em;
 		cursor: pointer;
+	}
+
+	/* Styles for inline math expressions */
+	.math-inline {
+		font-family: 'Times New Roman', Times, serif;
+		background-color: #f9f9f9;
+		padding: 0 4px;
+		border-radius: 4px;
+	}
+
+	/* Styles for block math expressions */
+	.math-block {
+		display: block;
+		font-family: 'Times New Roman', Times, serif;
+		background-color: #f9f9f9;
+		padding: 8px;
+		margin: 8px 0;
+		border-radius: 4px;
+		text-align: center;
 	}
 </style>
