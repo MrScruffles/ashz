@@ -27,10 +27,9 @@
 		// Replace double line breaks with <br><br>
 		let formatted = description.replace(/\n\n/g, '<br><br>');
 
-		// Basic rendering for LaTeX-like expressions within $...$ or $$...$$
-		// Wrap expressions in <span> with a "math" class for styling
-		formatted = formatted.replace(/\$\$([^\$]+)\$\$/g, '<span class="math-block">$1</span>');
-		formatted = formatted.replace(/\$([^\$]+)\$/g, '<span class="math-inline">$1</span>');
+		// Render LaTeX-like expressions for math formulas using <div> for multiline and <span> for inline
+		formatted = formatted.replace(/\[\s*([^]+?)\s*\]/g, '<div class="math-block">$1</div>'); // Block expressions
+		formatted = formatted.replace(/\(\s*([^]+?)\s*\)/g, '<span class="math-inline">$1</span>'); // Inline expressions
 
 		return formatted;
 	};
@@ -193,8 +192,8 @@
 
 	.modal-content {
 		background-color: rgba(0, 0, 0, 0.7);
-		padding: 10px; /* Reduced padding */
-		border-radius: 5px; /* Reduced border size */
+		padding: 10px;
+		border-radius: 5px;
 		width: 90%;
 		max-width: 900px;
 		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
@@ -213,7 +212,7 @@
 
 	/* Styles for inline math expressions */
 	.math-inline {
-		font-family: 'Times New Roman', Times, serif;
+		font-family: 'Courier New', monospace;
 		background-color: #f9f9f9;
 		padding: 0 4px;
 		border-radius: 4px;
@@ -222,7 +221,7 @@
 	/* Styles for block math expressions */
 	.math-block {
 		display: block;
-		font-family: 'Times New Roman', Times, serif;
+		font-family: 'Courier New', monospace;
 		background-color: #f9f9f9;
 		padding: 8px;
 		margin: 8px 0;
