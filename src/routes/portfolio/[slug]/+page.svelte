@@ -17,21 +17,15 @@
 	export let data: { project?: Project };
 
 	const screenshots = data.project?.screenshots ?? [];
+
 	let showVideos: boolean[] = [];
 	let screenIndex: number | undefined = undefined;
 
-	// Format the description to handle \n\n as <br> and render LaTeX-like expressions
+	// Process the description to replace \n\n with <br> tags
 	const formatDescription = (description: string | undefined): string => {
 		if (!description) return "";
-
-		// Replace double line breaks with <br><br>
-		let formatted = description.replace(/\n\n/g, '<br><br>');
-
-		// Render LaTeX-like expressions for math formulas using <div> for multiline and <span> for inline
-		formatted = formatted.replace(/\[\s*([^]+?)\s*\]/g, '<div class="math-block">$1</div>'); // Block expressions
-		formatted = formatted.replace(/\(\s*([^]+?)\s*\)/g, '<span class="math-inline">$1</span>'); // Inline expressions
-
-		return formatted;
+		// Replace instances of \n\n with <br>
+		return description.replace(/\n\n/g, '<br><br>');
 	};
 
 	$: screenshot =
@@ -93,7 +87,7 @@
 			<div class="pt-3 pb-1 overflow-x-hidden w-full">
 				<div class="px-10px m-y-5">
 					{#if data.project.description}
-						<!-- Use the formatted description with LaTeX support -->
+						<!-- Use the formatted description with <br> handling -->
 						<Markdown content={formatDescription(data.project.description)} />
 					{:else}
 						<div class="p-5 col-center gap-3 m-y-auto text-[var(--border)]">
@@ -192,8 +186,8 @@
 
 	.modal-content {
 		background-color: rgba(0, 0, 0, 0.7);
-		padding: 10px;
-		border-radius: 5px;
+		padding: 10px; /* Reduced padding */
+		border-radius: 5px; /* Reduced border size */
 		width: 90%;
 		max-width: 900px;
 		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
@@ -208,24 +202,5 @@
 		color: white;
 		font-size: 2em;
 		cursor: pointer;
-	}
-
-	/* Styles for inline math expressions */
-	.math-inline {
-		font-family: 'Courier New', monospace;
-		background-color: #f9f9f9;
-		padding: 0 4px;
-		border-radius: 4px;
-	}
-
-	/* Styles for block math expressions */
-	.math-block {
-		display: block;
-		font-family: 'Courier New', monospace;
-		background-color: #f9f9f9;
-		padding: 8px;
-		margin: 8px 0;
-		border-radius: 4px;
-		text-align: center;
 	}
 </style>
