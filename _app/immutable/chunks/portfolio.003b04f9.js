@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.ac03fe7c.js";import{g as t}from"./skills.da5d8f6d.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
+import{A as e}from"./UIcon.c91adb11.js";import{g as t}from"./skills.ac3d0bf0.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
 
 <h2>Introduction</h2>
 Health insurance premium costs are determined by several factors such as age, BMI, smoking status, and other health-related variables. The goal of this project is to create a regression model to predict insurance premium costs based on these factors. This prediction model can be beneficial for both patients and healthcare providers, providing insight into how lifestyle choices affect premium costs. However, there are potential ethical concerns, such as insurance companies using this data to raise premiums for those deemed higher risk.
@@ -22,9 +22,9 @@ In this project, we implemented linear regression and random forest regression t
 
 For **Linear Regression**, the relationship between the input features (such as age, BMI, and smoking status) and the target variable (insurance charges) is represented by the formula:
 
-\`\`\`
+
 y = B0 + B1*x1 + B2*x2 + ... + Bn*xn + e
-\`\`\`
+
 
 Where:
 - \`y\` is the predicted insurance charge,
@@ -35,9 +35,9 @@ Where:
 
 The model aims to minimize the **Mean Squared Error (MSE)**, which calculates the average squared difference between the actual and predicted values:
 
-\`\`\`
+
 MSE = (1/n) * Σ(yi - yi_hat)^2
-\`\`\`
+
 
 Where:
 - \`yi\` is the actual value,
@@ -46,9 +46,9 @@ Where:
 
 We also compute the **Root Mean Squared Error (RMSE)** to assess model performance, which is simply the square root of MSE:
 
-\`\`\`
+
 RMSE = sqrt(MSE)
-\`\`\`
+
 
 **Random Forest Regression** enhances this by building multiple decision trees and averaging their predictions, making it better suited for capturing complex, non-linear relationships.
 
