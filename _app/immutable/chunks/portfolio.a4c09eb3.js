@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.a04e330f.js";import{g as t}from"./skills.6d2f89f5.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
+import{A as e}from"./UIcon.d5d3e4c8.js";import{g as t}from"./skills.486653c1.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
 
 <h2>Introduction</h2>
 Health insurance premium costs are determined by several factors such as age, BMI, smoking status, and other health-related variables. The goal of this project is to create a regression model to predict insurance premium costs based on these factors. This prediction model can be beneficial for both patients and healthcare providers, providing insight into how lifestyle choices affect premium costs. However, there are potential ethical concerns, such as insurance companies using this data to raise premiums for those deemed higher risk.
@@ -19,7 +19,7 @@ Regression is a statistical method for modeling the relationship between a depen
 
 For **Linear Regression**, we aim to fit a line that minimizes the error between predicted and actual values. Mathematically, it’s represented as:
 
-\\[ y = \\beta_0 + \\beta_1x_1 + \\dots + \\beta_nx_n + \\epsilon \\]
+\\[ y = \\beta_0 + \\beta_1 x_1 + \\dots + \\beta_n x_n + \\epsilon \\]
 
 Where:
 - \\( y \\) is the predicted value (insurance charges),
