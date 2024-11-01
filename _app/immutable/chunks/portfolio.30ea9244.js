@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.e517de9f.js";import{g as t}from"./skills.99762de3.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
+import{A as e}from"./UIcon.ac03fe7c.js";import{g as t}from"./skills.da5d8f6d.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
 
 <h2>Introduction</h2>
 Health insurance premium costs are determined by several factors such as age, BMI, smoking status, and other health-related variables. The goal of this project is to create a regression model to predict insurance premium costs based on these factors. This prediction model can be beneficial for both patients and healthcare providers, providing insight into how lifestyle choices affect premium costs. However, there are potential ethical concerns, such as insurance companies using this data to raise premiums for those deemed higher risk.
@@ -15,7 +15,42 @@ The dataset used for this analysis is sourced from a Kaggle dataset that include
 - **charges**: The insurance premium charged to the individual
 
 <h2>What is Regression?</h2>
-Regression is a statistical technique used to understand relationships between variables, predicting a continuous output based on inputs. In this project, we use regression to predict \`charges\` (insurance premiums) based on factors like age, BMI, and smoking status. For linear regression, the formula \`y = β₀ + β₁*x₁ + ... + βn*xn + ε\` minimizes the error between predicted and actual values, fitting a line through the data. We also employed Random Forest Regression, which uses an ensemble of decision trees to capture non-linear relationships, making it more robust for complex data.
+Regression is a statistical technique used to understand relationships between variables, predicting a continuous output based on inputs. In this project, we use regression to predict \`charges\` (insurance premiums) based on factors like age, BMI, and smoking status. For linear regression, the formula \`y = B0 + B1*x1 + ... + Bn*xn + e\` minimizes the error between predicted and actual values, fitting a line through the data. We also employed Random Forest Regression, which uses an ensemble of decision trees to capture non-linear relationships, making it more robust for complex data.
+
+<h2>Math Section</h2>
+In this project, we implemented linear regression and random forest regression to predict health insurance premiums.
+
+For **Linear Regression**, the relationship between the input features (such as age, BMI, and smoking status) and the target variable (insurance charges) is represented by the formula:
+
+\`\`\`
+y = B0 + B1*x1 + B2*x2 + ... + Bn*xn + e
+\`\`\`
+
+Where:
+- \`y\` is the predicted insurance charge,
+- \`B0\` is the intercept,
+- \`B1, B2, ... , Bn\` are the coefficients for each feature,
+- \`x1, x2, ... , xn\` are the input features (age, BMI, etc.),
+- \`e\` represents the error term.
+
+The model aims to minimize the **Mean Squared Error (MSE)**, which calculates the average squared difference between the actual and predicted values:
+
+\`\`\`
+MSE = (1/n) * Σ(yi - yi_hat)^2
+\`\`\`
+
+Where:
+- \`yi\` is the actual value,
+- \`yi_hat\` is the predicted value,
+- \`n\` is the number of observations.
+
+We also compute the **Root Mean Squared Error (RMSE)** to assess model performance, which is simply the square root of MSE:
+
+\`\`\`
+RMSE = sqrt(MSE)
+\`\`\`
+
+**Random Forest Regression** enhances this by building multiple decision trees and averaging their predictions, making it better suited for capturing complex, non-linear relationships.
 
 <h2>Data Pre-processing</h2>
 To prepare the dataset for regression modeling, several steps were taken:
