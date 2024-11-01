@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.a54ad5f8.js";import{g as t}from"./skills.87b93a9b.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
+import{A as e}from"./UIcon.e517de9f.js";import{g as t}from"./skills.99762de3.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
 
 <h2>Introduction</h2>
 Health insurance premium costs are determined by several factors such as age, BMI, smoking status, and other health-related variables. The goal of this project is to create a regression model to predict insurance premium costs based on these factors. This prediction model can be beneficial for both patients and healthcare providers, providing insight into how lifestyle choices affect premium costs. However, there are potential ethical concerns, such as insurance companies using this data to raise premiums for those deemed higher risk.
@@ -15,7 +15,7 @@ The dataset used for this analysis is sourced from a Kaggle dataset that include
 - **charges**: The insurance premium charged to the individual
 
 <h2>What is Regression?</h2>
-Regression is a statistical technique used to understand relationships between variables, predicting a continuous output based on inputs. In this project, we use regression to predict \`charges\` (insurance premiums) based on factors like age, BMI, and smoking status. For linear regression, the formula ( y = \\beta_0 + \\beta_1x_1 + \\dots + \\beta_nx_n + \\epsilon ) minimizes the error between predicted and actual values, fitting a line through the data. We also employed Random Forest Regression, which uses an ensemble of decision trees to capture non-linear relationships, making it more robust for complex data.
+Regression is a statistical technique used to understand relationships between variables, predicting a continuous output based on inputs. In this project, we use regression to predict \`charges\` (insurance premiums) based on factors like age, BMI, and smoking status. For linear regression, the formula \`y = β₀ + β₁*x₁ + ... + βn*xn + ε\` minimizes the error between predicted and actual values, fitting a line through the data. We also employed Random Forest Regression, which uses an ensemble of decision trees to capture non-linear relationships, making it more robust for complex data.
 
 <h2>Data Pre-processing</h2>
 To prepare the dataset for regression modeling, several steps were taken:
@@ -29,17 +29,17 @@ To gain a better understanding of the relationships in the data, several visuali
 1. **Correlation Heatmap**
    This heatmap reveals the relationships between different variables, with strong positive correlations indicating higher insurance charges, particularly for \`smoker_yes\` and \`age\`.
 
-   ![Correlation Heatmap of Insurance Data](attachment/HeatMap_Data.png)
+   <img src="https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/HeatMap_Data.png" alt="Correlation Heatmap of Insurance Data" width="1200">
 
 2. **Feature Importance in Random Forest**
    The following bar chart demonstrates feature importance as determined by the Random Forest model, where smoking status (\`smoker_yes\`) has the highest importance, followed by \`age\` and \`bmi\`.
 
-   ![Feature Importance in Random Forest](attachment/Bargraph_Data.png)
+   <img src="https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/Bargraph_Data.png" alt="Feature Importance in Random Forest" width="1200">
 
 3. **Pairplot**
    A pairplot was created to visualize relationships between \`age\`, \`bmi\`, and \`charges\`, providing insights into how these factors contribute to insurance premiums. Smokers, in particular, tend to have higher premiums.
 
-   ![Pairplot of Age, BMI, and Charges](attachment/Pairplot_Data.png)
+   <img src="https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/Pairplot_Data.png" alt="Pairplot of Age, BMI, and Charges" width="1200">
 
 <h2>Modeling</h2>
 The project employed two regression models to predict insurance premium price:
