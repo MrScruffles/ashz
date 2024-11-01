@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.a0c637c0.js";import{g as t}from"./skills.e73bb85e.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
+import{A as e}from"./UIcon.f94acadc.js";import{g as t}from"./skills.318984a7.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
 
 <h2>Introduction</h2>
 Health insurance premium costs are determined by several factors such as age, BMI, smoking status, and other health-related variables. The goal of this project is to create a regression model to predict insurance premium costs based on these factors. This prediction model can be beneficial for both patients and healthcare providers, providing insight into how lifestyle choices affect premium costs. However, there are potential ethical concerns, such as insurance companies using this data to raise premiums for those deemed higher risk.
@@ -19,24 +19,30 @@ Regression is a statistical method for modeling the relationship between a depen
 
 For **Linear Regression**, we aim to fit a line that minimizes the error between predicted and actual values. Mathematically, it’s represented as:
 
-\\[ y = \\beta_0 + \\beta_1 x_1 + \\dots + \\beta_n x_n + \\epsilon \\]
+\`\`\`
+y = β₀ + β₁*x₁ + ... + βn*xn + ε
+\`\`\`
 
 Where:
-- \\( y \\) is the predicted value (insurance charges),
-- \\( \\beta_0 \\) is the intercept,
-- \\( \\beta_1, \\dots, \\beta_n \\) are coefficients for each feature,
-- \\( x_1, \\dots, x_n \\) are the features (age, BMI, etc.),
-- \\( \\epsilon \\) represents the error term.
+- \`y\` is the predicted value (insurance charges),
+- \`β₀\` is the intercept,
+- \`β₁, ... , βn\` are coefficients for each feature,
+- \`x₁, ... , xn\` are the features (age, BMI, etc.),
+- \`ε\` represents the error term.
 
 The model minimizes the **Mean Squared Error (MSE)**:
 
-\\[ \\text{MSE} = \\frac{1}{n} \\sum_{i=1}^n (y_i - \\hat{y}_i)^2 \\]
+\`\`\`
+MSE = (1/n) * Σ(yᵢ - ŷᵢ)²
+\`\`\`
 
-where \\( y_i \\) is the actual value, \\( \\hat{y}_i \\) is the predicted value, and \\( n \\) is the number of observations.
+where \`yᵢ\` is the actual value, \`ŷᵢ\` is the predicted value, and \`n\` is the number of observations.
 
 We also calculate the **Root Mean Squared Error (RMSE)**, which is the square root of MSE:
 
-\\[ \\text{RMSE} = \\sqrt{\\text{MSE}} \\]
+\`\`\`
+RMSE = √(MSE)
+\`\`\`
 
 **Random Forest Regression** uses an ensemble of decision trees, where each tree makes a prediction, and the final prediction is the average across all trees. This helps capture non-linear relationships more effectively than Linear Regression, making it ideal for complex data like health insurance premiums.
 
