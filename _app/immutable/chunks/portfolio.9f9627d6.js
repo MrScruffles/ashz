@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.e48640cf.js";import{g as t}from"./skills.aa899b1f.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
+import{A as e}from"./UIcon.a04e330f.js";import{g as t}from"./skills.6d2f89f5.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
 
 <h2>Introduction</h2>
 Health insurance premium costs are determined by several factors such as age, BMI, smoking status, and other health-related variables. The goal of this project is to create a regression model to predict insurance premium costs based on these factors. This prediction model can be beneficial for both patients and healthcare providers, providing insight into how lifestyle choices affect premium costs. However, there are potential ethical concerns, such as insurance companies using this data to raise premiums for those deemed higher risk.
@@ -14,30 +14,61 @@ The dataset used for this analysis is sourced from a Kaggle dataset that include
 - **region**: The region in the United States where the individual lives
 - **charges**: The insurance premium charged to the individual
 
+<h2>What is Regression?</h2>
+Regression is a statistical method for modeling the relationship between a dependent variable (output) and one or more independent variables (inputs). In this project, we use regression to predict \`charges\` (insurance premiums) based on variables like age, BMI, and smoking status.
+
+For **Linear Regression**, we aim to fit a line that minimizes the error between predicted and actual values. Mathematically, it’s represented as:
+
+\\[ y = \\beta_0 + \\beta_1x_1 + \\dots + \\beta_nx_n + \\epsilon \\]
+
+Where:
+- \\( y \\) is the predicted value (insurance charges),
+- \\( \\beta_0 \\) is the intercept,
+- \\( \\beta_1, \\dots, \\beta_n \\) are coefficients for each feature,
+- \\( x_1, \\dots, x_n \\) are the features (age, BMI, etc.),
+- \\( \\epsilon \\) represents the error term.
+
+The model minimizes the **Mean Squared Error (MSE)**:
+
+\\[ \\text{MSE} = \\frac{1}{n} \\sum_{i=1}^n (y_i - \\hat{y}_i)^2 \\]
+
+where \\( y_i \\) is the actual value, \\( \\hat{y}_i \\) is the predicted value, and \\( n \\) is the number of observations.
+
+We also calculate the **Root Mean Squared Error (RMSE)**, which is the square root of MSE:
+
+\\[ \\text{RMSE} = \\sqrt{\\text{MSE}} \\]
+
+**Random Forest Regression** uses an ensemble of decision trees, where each tree makes a prediction, and the final prediction is the average across all trees. This helps capture non-linear relationships more effectively than Linear Regression, making it ideal for complex data like health insurance premiums.
+
 <h2>Data Pre-processing</h2>
 To prepare the dataset for regression modeling, several steps were taken:
 - **Handling Missing Data**: The dataset did not contain any missing values, so no rows were removed.
 - **Standardizing Numerical Features**: The numerical features such as \`age\` and \`bmi\` were standardized using \`StandardScaler\` to ensure they were on the same scale.
-- **Encoding Categorical Variables**: The categorical columns \`sex\`, \`smoker\`, and \`region\` were encoded using one-hot encoding.
+- **Encoding Categorical Variables**: The categorical columns \`sex\`, \`smoker\`, and \`region\` were encoded using one-hot encoding, allowing the model to interpret non-numeric information.
 
 <h2>Data Understanding and Visualization</h2>
-To gain a better understanding of the relationships in the data, several visualizations were created. For example, a correlation heatmap was generated to observe the relationships between different variables.
+To gain a better understanding of the relationships in the data, several visualizations were created:
 
-<img src="https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/HeatMap_Data.png" alt="Correlation Heatmap of Insurance Data" width="1200">
+1. **Correlation Heatmap**
+   This heatmap reveals the relationships between different variables, with strong positive correlations indicating higher insurance charges, particularly for \`smoker_yes\` and \`age\`.
 
-The heatmap reveals that \`age\` and \`bmi\` have positive correlations with \`charges\`. Additionally, being a smoker (\`smoker\`) has a strong positive correlation with higher premiums.
+   ![Correlation Heatmap of Insurance Data](attachment/HeatMap_Data.png)
 
-Further, a pairplot was created to visualize the relationships between \`age\`, \`bmi\`, and \`charges\`:
+2. **Feature Importance in Random Forest**
+   The following bar chart demonstrates feature importance as determined by the Random Forest model, where smoking status (\`smoker_yes\`) has the highest importance, followed by \`age\` and \`bmi\`.
 
-<img src="https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/Pairplot_Data.png" alt="Pairplot of Age, BMI, and Charges" width="1200">
+   ![Feature Importance in Random Forest](attachment/Bargraph_Data.png)
 
-These visualizations provided insight into how health factors contribute to the insurance premiums. Smokers, in particular, tend to have higher insurance premiums.
+3. **Pairplot**
+   A pairplot was created to visualize relationships between \`age\`, \`bmi\`, and \`charges\`, providing insights into how these factors contribute to insurance premiums. Smokers, in particular, tend to have higher premiums.
 
-<h2>Modeling (Inside the .ipynb file)</h2>
-The project employed two regression models to predict the insurance premium price:
+   ![Pairplot of Age, BMI, and Charges](attachment/Pairplot_Data.png)
+
+<h2>Modeling</h2>
+The project employed two regression models to predict insurance premium price:
 
 1. **Linear Regression**: A simple, interpretable model used as a baseline.
-2. **Random Forest Regressor**: An ensemble-based model to capture non-linear relationships between the features and premium costs.
+2. **Random Forest Regressor**: An ensemble-based model that captures non-linear relationships between features and premium costs, improving performance.
 
 <h2>Model Evaluation</h2>
 The performance of the models was evaluated using **Mean Squared Error (MSE)** and **R-squared (R²)** metrics:
@@ -50,7 +81,7 @@ The performance of the models was evaluated using **Mean Squared Error (MSE)** a
    - **MSE**: Z
    - **R-squared**: W
 
-The Random Forest model performed better overall, capturing the non-linear relationships between the features and insurance premiums.
+The Random Forest model performed better overall, capturing non-linear relationships between features and insurance premiums more effectively than Linear Regression.
 
 <h2>Insights Gained</h2>
 - **Age and Smoking**: Older individuals and smokers consistently had higher insurance premiums.
@@ -62,11 +93,17 @@ By conducting this analysis, we gained valuable insights into how various health
 - **Positive Impact**: This project can help individuals understand which lifestyle choices (e.g., quitting smoking) may lead to reduced health insurance premiums.
 - **Negative Impact**: Insurance companies might use such models to disproportionately raise premiums for high-risk individuals, which could exacerbate health inequalities.
 
+<h2>Conclusion</h2>
+This project demonstrated how data-driven models can predict health insurance premiums based on personal health characteristics. The Random Forest model’s superior performance highlights the importance of using complex models for non-linear relationships. Standardizing features and encoding categorical variables were essential steps in improving the model’s accuracy. These findings underscore the potential impact of predictive models in healthcare pricing, though ethical considerations must be addressed.
+
 <h2>References</h2>
 - **Kaggle Dataset**: [Premium Health Insurance Dataset](https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance)
 - **Scikit-learn Documentation**:
   - [Linear Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
-  - [Random Forest Regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)`,links:[{to:"https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance",label:"Kaggle Dataset"},{to:"https://github.com/MrScruffles/ashz/blob/09993b337fb35a59619ec295cd3dc9cfc057f278/static/screenshots/Project3/ITSC-3162%20--%20Project3.ipynb",label:"Jupiter Notebook File (Download)"}],logo:e.Jupyter,name:"Regression of Health Insurance",period:{from:new Date("2024-10-02")},skills:t("jupyter","Python","Pandas","Data Visualization"),type:"Data Analysis",screenshots:[{src:"https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/HeatMap_Data.png",label:"Heatmap Plot"},{src:"https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/Bargraph_Data.png",label:"Bargraph Plot"},{src:"https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/Pairplot_Data.png",label:"Pairplot Data"}]},{slug:"classification-apple-stock-analysis",color:"#ff8b00",shortDescription:"A comprehensive data analysis project examining trends in Apple Inc.s stock prices using a Kaggle dataset. The project explores key factors such as historical stock prices, daily returns, trading volumes, and seasonal trends to understand the companys market performance over time.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 2, this data analysis project focuses on the various trends in Apple Inc stock prices over time using a detailed Kaggle dataset.
+  - [Random Forest Regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
+
+<h2>Code</h2>
+You can find the full Jupyter Notebook [here](attachment/ITSC-3162 -- Project3.ipynb) which includes all code, data pre-processing, model training, and evaluation steps.`,links:[{to:"https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance",label:"Kaggle Dataset"},{to:"https://github.com/MrScruffles/ashz/blob/09993b337fb35a59619ec295cd3dc9cfc057f278/static/screenshots/Project3/ITSC-3162%20--%20Project3.ipynb",label:"Jupiter Notebook File (Download)"}],logo:e.Jupyter,name:"Regression of Health Insurance",period:{from:new Date("2024-10-02")},skills:t("jupyter","Python","Pandas","Data Visualization"),type:"Data Analysis",screenshots:[{src:"https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/HeatMap_Data.png",label:"Heatmap Plot"},{src:"https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/Bargraph_Data.png",label:"Bargraph Plot"},{src:"https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/Pairplot_Data.png",label:"Pairplot Data"}]},{slug:"classification-apple-stock-analysis",color:"#ff8b00",shortDescription:"A comprehensive data analysis project examining trends in Apple Inc.s stock prices using a Kaggle dataset. The project explores key factors such as historical stock prices, daily returns, trading volumes, and seasonal trends to understand the companys market performance over time.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 2, this data analysis project focuses on the various trends in Apple Inc stock prices over time using a detailed Kaggle dataset.
 
 <h2>Introduction</h2>
 Apple Inc. is a company known for its devices like the iPhone, iPad, Mac computers, and various software solutions. Since its inception, Apple which is also one of the leader players in the tech industry, and its stock performance reflects its market influence and financial health. Analyzing Apple stock data over an extended period provides valuable insights into market trends, investors, and the company's growth trajectory. This project aims to explore historical stock data to identify patterns, understand fluctuations, and look more into the factors that have influenced Apple's stock prices.
