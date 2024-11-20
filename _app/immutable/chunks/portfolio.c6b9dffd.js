@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.27b1609f.js";import{g as t}from"./skills.a07960b5.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
+import{A as e}from"./UIcon.68c2cbd8.js";import{g as t}from"./skills.27c858d4.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
 
 <h2>Introduction</h2>
 Health insurance premium costs are determined by several factors such as age, BMI, smoking status, and other health-related variables. The goal of this project is to create a regression model to predict insurance premium costs based on these factors. This prediction model can be beneficial for both patients and healthcare providers, providing insight into how lifestyle choices affect premium costs. However, there are potential ethical concerns, such as insurance companies using this data to raise premiums for those deemed higher risk.
@@ -22,9 +22,7 @@ In this project, I implemented linear regression and random forest regression to
 
 For **Linear Regression**, the relationship between the input features (such as age, BMI, and smoking status) and the target variable (insurance charges) is represented by the formula:
 
-
 y = B0 + B1*x1 + B2*x2 + ... + Bn*xn + e
-
 
 Where:
 - \`y\` is the predicted insurance charge,
@@ -33,30 +31,49 @@ Where:
 - \`x1, x2, ... , xn\` are the input features (age, BMI, etc.),
 - \`e\` represents the error term.
 
-The model aims to minimize the **Mean Squared Error (MSE)**, which calculates the average squared difference between the actual and predicted values:
+<h2>Experiment Setup</h2>
+To ensure accurate modeling and fair evaluation, the dataset was split into training and testing subsets using an 80/20 split. This ensures that 80% of the data is used to train the models, and 20% is reserved for testing and evaluation. The input features (independent variables) are:
+- \`age\`
+- \`bmi\`
+- \`children\`
+- \`sex\` (one-hot encoded)
+- \`smoker\` (one-hot encoded)
+- \`region\` (one-hot encoded)
 
+The target variable (dependent variable) is:
+- \`charges\` (health insurance premiums)
 
-MSE = (1/n) * Σ(yi - yi_hat)^2
+The data was pre-processed to ensure quality and consistency:
+- **Numerical Scaling**: All numerical features (e.g., \`age\`, \`bmi\`) were standardized using \`StandardScaler\`.
+- **One-Hot Encoding**: Categorical variables (\`sex\`, \`smoker\`, \`region\`) were transformed into binary columns.
 
+<h2>Models Used</h2>
+1. **Linear Regression**: 
+   - **Description**: A simple, interpretable model that establishes a linear relationship between input features and the target variable.
+   - **Training**: The model was trained on the standardized and one-hot encoded training set.
+   - **Target Features**: All input features (\`age\`, \`bmi\`, etc.) were included to predict \`charges\`.
+   - **Evaluation**:
+     - **MSE**: [Actual MSE value for Linear Regression]
+     - **R-squared**: [Actual R² value for Linear Regression]
 
-Where:
-- \`yi\` is the actual value,
-- \`yi_hat\` is the predicted value,
-- \`n\` is the number of observations.
+2. **Random Forest Regressor**: 
+   - **Description**: An ensemble-based model that captures non-linear relationships by averaging multiple decision trees.
+   - **Training**: The model was trained with 100 estimators (trees) and default depth. Hyperparameter tuning was conducted using GridSearchCV to optimize performance.
+   - **Target Features**: All input features were used to predict \`charges\`.
+   - **Evaluation**:
+     - **MSE**: [Actual MSE value for Random Forest]
+     - **R-squared**: [Actual R² value for Random Forest]
 
-We also compute the **Root Mean Squared Error (RMSE)** to assess model performance, which is simply the square root of MSE:
+3. **Polynomial Regression (Experiment)**:
+   - **Description**: A model that extends linear regression by incorporating polynomial terms (e.g., \`age^2\`, \`bmi^2\`) to capture non-linear relationships.
+   - **Training**: The model was trained using PolynomialFeatures with degree 2.
+   - **Target Features**: Polynomial features were generated for all numerical columns, and categorical variables were one-hot encoded.
+   - **Evaluation**:
+     - **MSE**: [Actual MSE value for Polynomial Regression]
+     - **R-squared**: [Actual R² value for Polynomial Regression]
 
-
-RMSE = sqrt(MSE)
-
-
-**Random Forest Regression** enhances this by building multiple decision trees and averaging their predictions, making it better suited for capturing complex, non-linear relationships.
-
-<h2>Data Pre-processing</h2>
-To prepare the dataset for regression modeling, several steps were taken:
-- **Handling Missing Data**: The dataset did not contain any missing values, so no rows were removed.
-- **Standardizing Numerical Features**: The numerical features such as \`age\` and \`bmi\` were standardized using \`StandardScaler\` to ensure they were on the same scale.
-- **Encoding Categorical Variables**: The categorical columns \`sex\`, \`smoker\`, and \`region\` were encoded using one-hot encoding, allowing the model to interpret non-numeric information.
+<h2>Model Evaluation</h2>
+The performance of the models was evaluated using **Mean Squared Error (MSE)** and **R-squared (R²)** metrics. These metrics provide insight into the model’s accuracy and its ability to explain variance in the data.
 
 <h2>Data Understanding and Visualization</h2>
 To gain a better understanding of the relationships in the data, several visualizations were created:
@@ -76,30 +93,9 @@ To gain a better understanding of the relationships in the data, several visuali
 
    <img src="https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/Pairplot_Data.png" alt="Pairplot of Age, BMI, and Charges" width="1200">
 
-<h2>Modeling</h2>
-The project employed two regression models to predict insurance premium price:
-
-1. **Linear Regression**: A simple, interpretable model used as a baseline.
-2. **Random Forest Regressor**: An ensemble-based model that captures non-linear relationships between features and premium costs, improving performance.
-
-<h2>Model Evaluation</h2>
-The performance of the models was evaluated using **Mean Squared Error (MSE)** and **R-squared (R²)** metrics:
-
-1. **Linear Regression**:
-   - **MSE**: X
-   - **R-squared**: Y
-
-2. **Random Forest Regressor**:
-   - **MSE**: Z
-   - **R-squared**: W
-
-The Random Forest model performed better overall, capturing non-linear relationships between features and insurance premiums more effectively than Linear Regression.
-
 <h2>Insights Gained</h2>
 - **Age and Smoking**: Older individuals and smokers consistently had higher insurance premiums.
 - **BMI**: BMI, while significant, did not contribute as strongly as smoking or age.
-
-By conducting this analysis, I gained valuable insights into how various health factors influence insurance premiums. The ethical implications of using this data must be considered, as it may lead to increased premiums for individuals who are more prone to health issues.
 
 <h2>Impact</h2>
 - **Positive Impact**: This project can help individuals understand which lifestyle choices (e.g., quitting smoking) may lead to reduced health insurance premiums.
@@ -113,6 +109,7 @@ This project demonstrated how data-driven models can predict health insurance pr
 - **Scikit-learn Documentation**:
   - [Linear Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
   - [Random Forest Regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
+  - [Polynomial Features](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html)
 
 <h2>Code</h2>
 You can find the full Jupyter Notebook at the top of this webpage, which includes all code, data pre-processing, model training, and evaluation steps.`,links:[{to:"https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance",label:"Kaggle Dataset"},{to:"https://github.com/MrScruffles/ashz/blob/09993b337fb35a59619ec295cd3dc9cfc057f278/static/screenshots/Project3/ITSC-3162%20--%20Project3.ipynb",label:"Jupiter Notebook File (Download)"},{to:"https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/Project3.zip",label:"Entire Project w/ Images (ZIP)"}],logo:e.Jupyter,name:"Regression of Health Insurance",period:{from:new Date("2024-10-02")},skills:t("jupyter","Python","Pandas","Data Visualization"),type:"Data Analysis",screenshots:[{src:"https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/HeatMap_Data.png",label:"Heatmap Plot"},{src:"https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/Bargraph_Data.png",label:"Bargraph Plot"},{src:"https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/Pairplot_Data.png",label:"Pairplot Data"}]},{slug:"classification-apple-stock-analysis",color:"#ff8b00",shortDescription:"A comprehensive data analysis project examining trends in Apple Inc.s stock prices using a Kaggle dataset. The project explores key factors such as historical stock prices, daily returns, trading volumes, and seasonal trends to understand the companys market performance over time.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 2, this data analysis project focuses on the various trends in Apple Inc stock prices over time using a detailed Kaggle dataset.
