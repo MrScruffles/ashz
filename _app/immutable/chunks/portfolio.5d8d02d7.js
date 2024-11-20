@@ -1,4 +1,4 @@
-import{A as e}from"./UIcon.e912010c.js";import{g as t}from"./skills.6001fab9.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
+import{A as e}from"./UIcon.a9e07fa9.js";import{g as t}from"./skills.46f1b802.js";const i=[{slug:"regression-health-insurance",color:"#ff8b00",shortDescription:"A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.",description:`Hello, my name is Ashkan Zahabiuon, and for Project 3, this data analysis project focuses on predicting the premium price of health insurance using a detailed Kaggle dataset.
 
 <h2>Introduction</h2>
 Health insurance premium costs are determined by several factors such as age, BMI, smoking status, and other health-related variables. The goal of this project is to create a regression model to predict insurance premium costs based on these factors. This prediction model can be beneficial for both patients and healthcare providers, providing insight into how lifestyle choices affect premium costs. However, there are potential ethical concerns, such as insurance companies using this data to raise premiums for those deemed higher risk.
@@ -18,7 +18,7 @@ The dataset used for this analysis is sourced from a Kaggle dataset that include
 Regression is a statistical technique used to understand relationships between variables, predicting a continuous output based on inputs. In this project, I use regression to predict \`charges\` (insurance premiums) based on factors like age, BMI, and smoking status. For linear regression, the formula \`y = B0 + B1*x1 + ... + Bn*xn + e\` minimizes the error between predicted and actual values, fitting a line through the data. We also employed Random Forest Regression, which uses an ensemble of decision trees to capture non-linear relationships, making it more robust for complex data.
 
 <h2>Math Section</h2>
-In this project, I implemented linear regression and random forest regression to predict health insurance premiums.
+In this project, I implemented linear regression, random forest regression, and polynomial regression to predict health insurance premiums.
 
 For **Linear Regression**, the relationship between the input features (such as age, BMI, and smoking status) and the target variable (insurance charges) is represented by the formula:
 
@@ -27,9 +27,24 @@ y = B0 + B1*x1 + B2*x2 + ... + Bn*xn + e
 Where:
 - \`y\` is the predicted insurance charge,
 - \`B0\` is the intercept,
-- \`B1, B2, ... , Bn\` are the coefficients for each feature,
-- \`x1, x2, ... , xn\` are the input features (age, BMI, etc.),
+- \`B1, B2, ..., Bn\` are the coefficients for each feature,
+- \`x1, x2, ..., xn\` are the input features (age, BMI, etc.),
 - \`e\` represents the error term.
+
+For **Polynomial Regression**, the formula expands to:
+
+y = B0 + B1*x1 + B2*x2 + B3*(x1^2) + B4*(x2^2) + ... + e
+
+Where higher-order terms (e.g., \`x1^2\`) allow the model to capture non-linear relationships.
+
+For **Random Forest Regression**, predictions are computed as:
+
+y = (1/N) * Σ<sub>t=1</sub><sup>N</sup> f<sub>t</sub>(x)
+
+Where:
+- \`N\` is the number of trees,
+- \`f_t(x)\` is the prediction from the \`t\`-th tree,
+- \`y\` is the average of all predictions, providing robustness to non-linear patterns.
 
 <h2>Experiment Setup</h2>
 To ensure accurate modeling and fair evaluation, the dataset was split into training and testing subsets using an 80/20 split. This ensures that 80% of the data is used to train the models, and 20% is reserved for testing and evaluation. The input features (independent variables) are:
@@ -48,29 +63,29 @@ The data was pre-processed to ensure quality and consistency:
 - **One-Hot Encoding**: Categorical variables (\`sex\`, \`smoker\`, \`region\`) were transformed into binary columns.
 
 <h2>Models Used</h2>
-1. **Linear Regression**: 
+1. **Linear Regression**:
    - **Description**: A simple, interpretable model that establishes a linear relationship between input features and the target variable.
    - **Training**: The model was trained on the standardized and one-hot encoded training set.
    - **Target Features**: All input features (\`age\`, \`bmi\`, etc.) were included to predict \`charges\`.
    - **Evaluation**:
-     - **MSE**: [Actual MSE value for Linear Regression]
-     - **R-squared**: [Actual R² value for Linear Regression]
+     - **MSE**: 33,596,915.85
+     - **R-squared**: 0.784
 
-2. **Random Forest Regressor**: 
+2. **Random Forest Regressor**:
    - **Description**: An ensemble-based model that captures non-linear relationships by averaging multiple decision trees.
    - **Training**: The model was trained with 100 estimators (trees) and default depth. Hyperparameter tuning was conducted using GridSearchCV to optimize performance.
    - **Target Features**: All input features were used to predict \`charges\`.
    - **Evaluation**:
-     - **MSE**: [Actual MSE value for Random Forest]
-     - **R-squared**: [Actual R² value for Random Forest]
+     - **MSE**: 20,895,941.13
+     - **R-squared**: 0.865
 
 3. **Polynomial Regression (Experiment)**:
    - **Description**: A model that extends linear regression by incorporating polynomial terms (e.g., \`age^2\`, \`bmi^2\`) to capture non-linear relationships.
    - **Training**: The model was trained using PolynomialFeatures with degree 2.
    - **Target Features**: Polynomial features were generated for all numerical columns, and categorical variables were one-hot encoded.
    - **Evaluation**:
-     - **MSE**: [Actual MSE value for Polynomial Regression]
-     - **R-squared**: [Actual R² value for Polynomial Regression]
+     - **MSE**: 20,712,805.99
+     - **R-squared**: 0.867
 
 <h2>Model Evaluation</h2>
 The performance of the models was evaluated using **Mean Squared Error (MSE)** and **R-squared (R²)** metrics. These metrics provide insight into the model’s accuracy and its ability to explain variance in the data.
