@@ -17,7 +17,7 @@ export const items: Array<Project> = [
     name: 'Regression of Health Insurance',
     period: { from: new Date('2024-10-02') },
     skills: getSkills('jupyter', 'Python', 'Pandas', 'Data Visualization'),
-    type: 'Data Analysis',
+    type: 'Data Analysis', 
     screenshots: [
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/HeatMap_Data.png', label: 'Heatmap Plot' },
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project3/Bargraph_Data.png', label: 'Bargraph Plot' },
