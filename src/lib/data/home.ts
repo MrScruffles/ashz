@@ -7,7 +7,7 @@ export const name = 'Ash';
 
 export const lastName = 'Zahabiuon';
 
-export const description = "I'm a Computer Science major with a minor in Computer Engineering at the University of North Carolina at Charlotte. I’m passionate about technology and constantly learning new skills to expand my knowledge in the field!"
+export const description = "I'm a Computer Science major with a minor in Computer Engineering at the University of North Carolina at Charlotte. I’m passionate am constantly learning new skills to expand my knowledge in the field!"
 
 export const links: Array<{ platform: Platform; link: string }> = [
 	{ platform: Platform.GitHub, link: 'https://github.com/MrScruffles/' },
