@@ -3,16 +3,16 @@ import type { Education } from '../types';
 
 export const items: Array<Education> = [
     {
-    degree: 'Master of Engineering in Computer Science',
-    description: 'Graduate Student | Expected Graduation May 2026',
-    location: 'Raleigh, NC, USA',
-    logo: Assets.Unknown,
-    name: 'Zahabiuon, Ash',
-    organization: 'North Carolina State University',
-    period: { from: new Date(2025, 7, 1), to: new Date(2026, 4, 1) },
-    shortDescription: 'Master of Science in Computer Science',
-    slug: 'nc-state-computer-science-masters',
-    subjects: ['Advanced Algorithms', 'Machine Learning', 'Distributed Systems', 'Database Systems', 'Computer Vision', 'Artificial Intelligence', 'Software Architecture', 'Research Methods']
+        degree: 'Master of Engineering in Computer Science',
+        description: 'Graduate Student | Expected Graduation May 2026',
+        location: 'Raleigh, NC, USA',
+        logo: Assets.Unknown,
+        name: 'Zahabiuon, Ash',
+        organization: 'North Carolina State University',
+        period: { from: new Date(2025, 7, 1), to: new Date(2026, 4, 1) },
+        shortDescription: 'Master of Science in Computer Science',
+        slug: 'nc-state-computer-science-masters',
+        subjects: ['Advanced Algorithms', 'Machine Learning', 'Distributed Systems', 'Database Systems', 'Computer Vision', 'Artificial Intelligence', 'Software Architecture', 'Research Methods']
     },
     {
         degree: 'Bachelor of Science in Computer Science',
