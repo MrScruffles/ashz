@@ -16,7 +16,7 @@ export const items: Array<Education> = [
     },
     {
         degree: 'Bachelor of Science in Computer Science',
-        description: 'Senior | Graduated May 2025',
+        description: 'Graduated May 2025',
         location: 'Charlotte, NC, USA',
         logo: Assets.Unknown,
         name: 'Zahabiuon, Ash',
