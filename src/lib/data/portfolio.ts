@@ -65,6 +65,25 @@ export const items: Array<Project> = [
     ]
   },
   {
+    slug: 'invision-community-plugin',
+    color: '#0ea5aaff',
+    description: 'A production-grade Invision Community plugin developed entirely in PHP, designed to extend the native platform with a custom REST API for game developer integration. It exposes endpoints for purchase data, account details, and subscription information, allowing external systems to authenticate users and synchronize in-game purchases seamlessly. The plugin also implements RBX OAuth 2.0 to link accounts directly within user profiles, enabling a unified login and purchase experience between the forum and game environment. With secure token-based access, rate limits, and consistent JSON schema, it ensures reliable data flow between Invision and third-party systems.',
+    shortDescription: 'PHP Invision plugin exposing a REST API for purchases, account info, subscriptions, and RBX OAuth 2.0 profile linking.',
+    links: [
+      { to: 'https://invisioncommunity.com/forums/', label: 'Invision Community Forums' },
+      { to: 'https://invisioncommunity.com/developers/rest-api/index/', label: 'Invision REST API Docs' }
+    ],
+    logo: Assets.PHP,
+    name: 'Invision Community Plugin',
+    period: { from: new Date('2024-01-29') },
+    skills: getSkills('php'),
+    type: 'Backend Integrations',
+    screenshots: [
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/InvisionCommunityPlugin/APIOutput_1.png', label: 'API Output – Purchases & Account' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/InvisionCommunityPlugin/APIOutput_2.png', label: 'API Output – Subscriptions' }
+    ]
+},
+  {
     slug: 'regression-health-insurance',
     color: '#ff8b00',
     shortDescription: 'A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.',
