@@ -3,6 +3,21 @@ import { getSkills } from './skills';
 import type { Project } from '../types';
 
 export const items: Array<Project> = [
+    {
+    slug: 'catwatcher',
+    color: '#d83030ff',
+    description: 'Website & API that allows big game developers to easily integrate the catwatcher system in game. Which checks if a player has used or is using cheats. This also includes a full backend system with a dashboard for developers to manage their games and view stats, along with having a discord bot & a chrome extension for users to easily view profiles.',
+    shortDescription: 'Catwatcher system integration for game developers, that has an API, dashboard, discord bot, and chrome extension.',
+    links: [{ to: 'https://catwatcher.org/', label: 'Catwatcher Website' }],
+    logo: Assets.PostgreSQL,
+    name: 'Catwatcher Integration',
+    period: { from: new Date('2025-10-10') },
+    skills: getSkills('postgresql', 'html', 'js', 'roblox', 'game-development'),
+    type: 'Game Development',
+    screenshots: [
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherExtension_Video.mov', label: 'CatWatcher Extension Video' , thumbnail: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherExtension_Thumbnail.png' },
+    ]
+  },
   {
     slug: 'regression-health-insurance',
     color: '#ff8b00',

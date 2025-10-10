@@ -188,6 +188,15 @@ export const items = [
 		category: 'pro-lang'
 	}),
 
+	defineSkill({
+		slug: 'postgresql',
+		color: '#F29111',
+		description: 'PostgreSQL is a powerful, open-source object-relational database system. It is known for its robustness, extensibility, and support for advanced data types and performance optimization features.',
+		logo: Assets.PostgreSQL,
+		name: 'PostgreSQL',
+		category: 'db'
+	}),
+
 ] as const;
 
 export const title = 'Skills';
