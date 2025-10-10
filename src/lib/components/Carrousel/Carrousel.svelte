@@ -28,14 +28,12 @@
 				index = index + 1;
 			} else {
 				index = 0;
-				toRight = false;
 			}
 		} else {
 			if (index > 0) {
 				index = index - 1;
 			} else {
 				index = items.length - 1;
-				toRight = true;
 			}
 		}
 	};
