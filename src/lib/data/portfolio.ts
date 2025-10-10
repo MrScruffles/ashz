@@ -15,9 +15,9 @@ export const items: Array<Project> = [
     skills: getSkills('postgresql', 'html', 'js', 'roblox', 'game-development'),
     type: 'Full-Stack Development',
     screenshots: [
-      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherExtension_Video.mov', label: 'CatWatcher Extension Video' , thumbnail: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherExtension_Thumbnail.png' },
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherDiscord_Preview.png', label: 'CatWatcher Discord Preview' },
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherWebsite_Preview.png', label: 'CatWatcher Website Preview' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherExtension_Video.mov', label: 'CatWatcher Extension Video' , thumbnail: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherExtension_Thumbnail.png' },
     ]
   },
   {
