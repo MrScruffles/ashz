@@ -31,7 +31,7 @@ export const items: Array<Project> = [
     name: 'MIRoles',
     period: { from: new Date('2025-5-13') },
     skills: getSkills('reactjs', 'firebase', 'html', 'js', 'rest', 'oauth2'),
-    type: 'Frontend & Integrations',
+    type: 'Frontend & Backend Integrations',
     screenshots: [
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesDashboard.png', label: 'MIRoles Dashboard' },
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesGameAdminOverview.png', label: 'MIRoles Game Admin Overview' },
