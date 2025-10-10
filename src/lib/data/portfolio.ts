@@ -274,7 +274,7 @@ export const items: Array<Project> = [
     logo: Assets.JavaScript,
     name: 'MountWare',
     period: {
-      from: new Date(),
+      from: new Date('2023-02-26'),
     },
     skills: getSkills('js', 'backend'),
     type: 'Backend Development',
