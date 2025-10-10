@@ -43,6 +43,28 @@ export const items: Array<Project> = [
     ]
   },
   {
+    slug: 'course-enrollment-feedback',
+    color: '#b91c1cff',
+    description: 'Full-stack academic project developed for the CSC 517: Object-Oriented Design and Development course at North Carolina State University. The system enables administrators to manage courses, students, and feedback through a structured Ruby-based backend and HTML interface. It supports user authentication, enrollment workflows, and a dynamic feedback module allowing students to rate and review courses. Administrators can view all submissions in an organized dashboard, track course-level statistics, and monitor participation trends. The project demonstrates strong adherence to MVC principles, modular Ruby design, and database-backed form handling following Rails conventions.',
+    shortDescription: 'Ruby and HTML-based academic course management system for CSC 517 at NCSU, supporting enrollments, feedback, and admin dashboards.',
+    links: [{ to: 'https://github.ncsu.edu/vpatel29/oodd_program_2', label: 'GitHub Repository' }],
+    logo: Assets.Ruby,
+    name: 'Course Enrollment & Feedback System',
+    period: { from: new Date('2025-10-03') },
+    skills: getSkills('ruby', 'html', 'css', 'js', 'sqlite'),
+    type: 'Academic',
+    screenshots: [
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/MainDashboard.png', label: 'Main Dashboard' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/OverviewPage.png', label: 'Overview Page' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/AdminDashboard.png', label: 'Admin Dashboard' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/Admin_CoursesPage.png', label: 'Courses Management Page' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/Admin_StudentsPage.png', label: 'Students Management Page' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/Admin_FeedbackPage.png', label: 'Feedback Management Page' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/Admin_LogsPage.png', label: 'Admin Logs' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/StudentsCourses_Page.png', label: 'Student Courses Page' }
+    ]
+  },
+  {
     slug: 'regression-health-insurance',
     color: '#ff8b00',
     shortDescription: 'A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.',

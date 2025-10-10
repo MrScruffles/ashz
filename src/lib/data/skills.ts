@@ -197,6 +197,15 @@ export const items = [
 		category: 'db'
 	}),
 
+	defineSkill({
+		slug: 'sqlite',
+		color: '#003B57',
+		description: 'SQLite is a lightweight, self-contained relational database management system. It is widely used in mobile applications, embedded systems, and small to medium-sized applications due to its simplicity and ease of integration.',
+		logo: Assets.SQLite,
+		name: 'SQLite',
+		category: 'db'
+	}),
+
 ] as const;
 
 export const title = 'Skills';
