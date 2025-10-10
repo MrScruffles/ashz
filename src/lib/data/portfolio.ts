@@ -42,7 +42,6 @@ export const items: Array<Project> = [
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesXPLeaderboard.png', label: 'MIRoles XP Leaderboard' }
     ]
   },
-
   {
     slug: 'regression-health-insurance',
     color: '#ff8b00',
