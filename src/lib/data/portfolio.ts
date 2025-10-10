@@ -6,16 +6,18 @@ export const items: Array<Project> = [
     {
     slug: 'catwatcher',
     color: '#d83030ff',
-    description: 'Website & API that allows big game developers to easily integrate the catwatcher system in game. Which checks if a player has used or is using cheats. This also includes a full backend system with a dashboard for developers to manage their games and view stats, along with having a discord bot & a chrome extension for users to easily view profiles.',
+    description: 'Website & API that allows big game developers to easily integrate the catwatcher system in game. Which checks if a player has used or is using cheats. This also includes a full backend system with a dashboard for developers to manage their games and view stats, along with having a discord bot & a chrome extension for users to easily view profiles. There is also a active database that is always increasing, as the system is being used more and more by users which indexes these cheaters and finds their RBX accounts which get added to the database. The postgreSQL database is used to store all of the data for the website, API, dashboard, and discord bot, which also are used to add whitelisted users, developers, and api information (total requests, ratelimit, and request cap, etc).',
     shortDescription: 'Catwatcher system integration for game developers, that has an API, dashboard, discord bot, and chrome extension.',
     links: [{ to: 'https://catwatcher.org/', label: 'Catwatcher Website' }],
     logo: Assets.PostgreSQL,
     name: 'Catwatcher Integration',
     period: { from: new Date('2025-10-10') },
     skills: getSkills('postgresql', 'html', 'js', 'roblox', 'game-development'),
-    type: 'Game Development',
+    type: 'Full-Stack Development',
     screenshots: [
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherExtension_Video.mov', label: 'CatWatcher Extension Video' , thumbnail: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherExtension_Thumbnail.png' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherDiscord_Preview.png', label: 'CatWatcher Discord Preview' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherWebsite_Preview.png', label: 'CatWatcher Website Preview' },
     ]
   },
   {
