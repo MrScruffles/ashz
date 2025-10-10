@@ -22,6 +22,28 @@ export const items: Array<Project> = [
     ]
   },
   {
+    slug: 'miroles',
+    color: '#2563ebff',
+    description: 'React-based internal web app built at Mountain Interactive. It integrates with Firebase to read and visualize production data when native realtime limits are exceeded, and connects to their Invision platform via REST APIs with OAuth2.0 for authentication. The app implements an approval flow and role-based access controls that unlock pages by permission level, audits user actions, and provides a suite of operational pages and tools for game team workflows.',
+    shortDescription: 'React web app for Mountain Interactive with Firebase data views, OAuth2.0 login to Invision, RBAC, audit logging, and game ops tools.',
+    links: [{ to: 'https://miroles.com/', label: 'MIRoles Website' }],
+    logo: Assets.ReactJs,
+    name: 'MIRoles',
+    period: { from: new Date('2025-10-10') },
+    skills: getSkills('reactjs', 'firebase', 'html', 'js', 'rest', 'oauth2'),
+    type: 'Frontend & Integrations',
+    screenshots: [
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesDashboard.png', label: 'MIRoles Dashboard' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesGameAdminOverview.png', label: 'MIRoles Game Admin Overview' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesGameAdminOverview2.png', label: 'MIRoles Game Admin Overview 2' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesMoneyLeaderboards.png', label: 'MIRoles Money Leaderboards' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesSystemLogs.png', label: 'MIRoles System Logs' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesUserDataEditor.png', label: 'MIRoles User Data Editor' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesXPLeaderboard.png', label: 'MIRoles XP Leaderboard' }
+    ]
+  },
+
+  {
     slug: 'regression-health-insurance',
     color: '#ff8b00',
     shortDescription: 'A comprehensive data analysis project predicting health insurance premium costs using a Kaggle dataset. The project explores key factors such as age, BMI, smoking status, and region to understand how health and lifestyle choices impact insurance premiums.',
