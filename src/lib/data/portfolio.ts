@@ -11,7 +11,7 @@ export const items: Array<Project> = [
     links: [{ to: 'https://catwatcher.org/', label: 'Catwatcher Website' }],
     logo: Assets.PostgreSQL,
     name: 'CatWatcher',
-    period: { from: new Date('2025-10-10') },
+    period: { from: new Date('2025-08-10') },
     skills: getSkills('postgresql', 'html', 'js', 'roblox', 'game-development'),
     type: 'Full-Stack Development',
     screenshots: [
@@ -29,7 +29,7 @@ export const items: Array<Project> = [
     links: [{ to: 'https://miroles.com/', label: 'MIRoles Website' }],
     logo: Assets.ReactJs,
     name: 'MIRoles',
-    period: { from: new Date('2025-10-10') },
+    period: { from: new Date('2025-5-13') },
     skills: getSkills('reactjs', 'firebase', 'html', 'js', 'rest', 'oauth2'),
     type: 'Frontend & Integrations',
     screenshots: [
