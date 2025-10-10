@@ -10,7 +10,7 @@ export const items: Array<Project> = [
     shortDescription: 'Catwatcher system integration for game developers, that has an API, dashboard, discord bot, and chrome extension.',
     links: [{ to: 'https://catwatcher.org/', label: 'Catwatcher Website' }],
     logo: Assets.PostgreSQL,
-    name: 'Catwatcher Integration',
+    name: 'CatWatcher',
     period: { from: new Date('2025-10-10') },
     skills: getSkills('postgresql', 'html', 'js', 'roblox', 'game-development'),
     type: 'Full-Stack Development',
