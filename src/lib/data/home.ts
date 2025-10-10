@@ -10,7 +10,10 @@ export const lastName = 'Zahabiuon';
 export const description = "I'm a UNCC graduate with a B.S. in Computer Science and Computer Engineering. I'm a current Master's student in Computer Science at NCSU!"
 
 export const links: Array<{ platform: Platform; link: string }> = [
-	{ platform: Platform.GitHub, link: 'https://github.com/MrScruffles/' },
+	{ 
+		platform: Platform.GitHub, 
+		link: 'https://github.com/MrScruffles/' 
+	},
 	{
 		platform: Platform.Linkedin,
 		link: 'https://www.linkedin.com/in/ashkan-zahabiuon/'
@@ -24,4 +27,5 @@ export const links: Array<{ platform: Platform; link: string }> = [
 		link: 'https://www.youtube.com/@AshiDivision'
 	},
 ]
+
 export const skills = getSkills('luau', 'reactjs', 'postgresql', 'lua', 'ruby', 'js', 'css', 'html', 'reactjs', 'sass', 'svelte', 'ts');

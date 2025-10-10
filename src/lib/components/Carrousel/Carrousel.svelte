@@ -27,14 +27,14 @@
 			if (index < items.length - 1) {
 				index = index + 1;
 			} else {
-				index = index - 1;
+				index = 0;
 				toRight = false;
 			}
 		} else {
 			if (index > 0) {
 				index = index - 1;
 			} else {
-				index = index + 1;
+				index = items.length - 1;
 				toRight = true;
 			}
 		}
