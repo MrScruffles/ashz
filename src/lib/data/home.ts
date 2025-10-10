@@ -24,4 +24,4 @@ export const links: Array<{ platform: Platform; link: string }> = [
 		link: 'https://www.youtube.com/@AshiDivision'
 	},
 ]
-export const skills = getSkills('js', 'css', 'html', 'reactjs', 'sass', 'svelte', 'ts');
+export const skills = getSkills('luau', 'reactjs', 'postgresql', 'lua', 'ruby', 'js', 'css', 'html', 'reactjs', 'sass', 'svelte', 'ts');
