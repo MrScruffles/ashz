@@ -65,6 +65,25 @@ export const items: Array<Project> = [
     ]
   },
   {
+    slug: 'customizable-belt-system',
+    color: '#0ea5aaff',
+    description: 'An advanced Roblox system integrating 3D DragDetectors to allow fully interactive belt customization directly within the game world. Players can drag, snap, and attach equipment dynamically to their character belts, simulating a modular tactical gear setup. The system combines precise spatial interaction with real-time physics validation, ensuring smooth placement and realistic behavior for tools and accessories. Designed for roleplay and simulation experiences, it provides both developers and players with a production-grade, intuitive interface that bridges UI and in-world customization. Inspired by in-engine demonstrations such as the official DragDetector showcase, this system expands the boundaries of player interaction in Roblox environments.',
+    shortDescription: 'Roblox belt customization system using 3D DragDetectors for interactive, modular gear attachment.',
+    links: [
+      { to: 'https://youtu.be/ssGkDTBpfNk', label: 'YouTube Showcase' },
+      { to: 'https://create.roblox.com/docs/ui/3D-drag-detectors', label: 'Roblox DragDetector Docs' }
+    ],
+    logo: Assets.LuaU,
+    name: 'Customizable Belt System',
+    period: { from: new Date('2025-12-03') },
+    skills: getSkills('luau'),
+    type: 'Gameplay Systems',
+    screenshots: [
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/BeltSystem/ShowcaseOne.png', label: 'DragDetector Gear Interaction' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/BeltSystem/ShowcaseTwo.png', label: 'Belt Customization Demo' }
+    ]
+  },
+  {
     slug: 'invision-community-plugin',
     color: '#0ea5aaff',
     description: 'A production-grade Invision Community plugin developed entirely in PHP, designed to extend the native platform with a custom REST API for game developer integration. It exposes endpoints for purchase data, account details, and subscription information, allowing external systems to authenticate users and synchronize in-game purchases seamlessly. The plugin also implements RBX OAuth 2.0 to link accounts directly within user profiles, enabling a unified login and purchase experience between the forum and game environment. With secure token-based access, rate limits, and consistent JSON schema, it ensures reliable data flow between Invision and third-party systems.',
@@ -83,7 +102,7 @@ export const items: Array<Project> = [
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/InvisionCommunityPlugin/APIOutput_1.png', label: 'API Output – Purchases & Account' },
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/InvisionCommunityPlugin/APIOutput_2.png', label: 'API Output – Subscriptions' }
     ]
-},
+  },
   {
     slug: 'regression-health-insurance',
     color: '#ff8b00',
