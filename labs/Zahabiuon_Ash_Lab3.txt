@@ -1,0 +1,164 @@
+/**
+* Name: Ash Zahabiuon
+* Date: 07/1/2024
+* Assignment: Lab 3
+* Youtube: https://www.youtube.com/watch?v=4kC4S-FP-vg
+*
+* This program:
+* The game "cyclone" is a common sight in many arcades.
+* This game presents a ring of lights where only one light is illuminated at a time and moves quickly across the ring.
+* The user can stop the light from moving by pressing the large button positioned in front of them.
+* The goal of the game is to stop the light directly in front of the user within a pair of goal arches.
+*/
+
+#include <msp430.h>
+
+typedef enum {IDLE, MOVE_RIGHT, MOVE_LEFT, WIN, LOSE} state_t;
+state_t currentState = IDLE;
+volatile int buttonPressed = 0;
+
+// Initialize GPIO pins for LEDs and button
+void initGPIO() {
+    WDTCTL = WDTPW | WDTHOLD;   // Stop watchdog timer
+
+    // Configure LED pins as outputs
+    P2DIR |= BIT0 | BIT1 | BIT2 | BIT3 | BIT4 | BIT5;
+    P1DIR |= BIT6;
+
+    // Configure button pin as input with pull-up resistor
+    P1DIR &= ~BIT3;
+    P1REN |= BIT3;
+    P1OUT |= BIT3;
+
+    // Enable button interrupt
+    P1IE |= BIT3;
+    P1IES |= BIT3;
+    P1IFG &= ~BIT3;
+
+    __bis_SR_register(GIE);     // Enable global interrupts
+}
+
+// Set all LEDs off except the middle LED
+void setAllLEDsOffExceptMiddle() {
+    P2OUT &= ~(BIT0 | BIT1 | BIT2 | BIT4 | BIT5);
+    P1OUT &= ~BIT6;
+}
+
+// Set all LEDs off
+void setAllLEDsOff() {
+    P2OUT &= ~(BIT0 | BIT1 | BIT2 | BIT3 | BIT4 | BIT5);
+    P1OUT &= ~BIT6;
+}
+
+// Set a specific LED on
+void setLED(int led) {
+    setAllLEDsOff();  // First, turn off all LEDs
+    switch(led) {
+        case 0: P2OUT |= BIT0; break;
+        case 1: P2OUT |= BIT1; break;
+        case 2: P2OUT |= BIT2; break;
+        case 3: P2OUT |= BIT3; break; // P2.3 is the middle LED
+        case 4: P2OUT |= BIT4; break;
+        case 5: P2OUT |= BIT5; break;
+        case 6: P1OUT |= BIT6; break; // P1.6
+    }
+}
+
+// Delay function
+void delay(unsigned int ms) {
+    while (ms--) {
+        __delay_cycles(1000);
+    }
+}
+
+// Button interrupt service routine
+#pragma vector=PORT1_VECTOR
+__interrupt void Port_1(void) {
+    if (P1IFG & BIT3) {
+        buttonPressed = 1;
+        P1IFG &= ~BIT3;  // Clear the interrupt flag
+    }
+}
+
+void main(void) {
+    initGPIO();
+    int ledPosition = 0;
+    unsigned int i;  // Declare loop variable here to avoid issues inside switch case
+
+    while(1) {
+        switch (currentState) {
+            case IDLE:
+                setAllLEDsOff();
+                if (buttonPressed) {
+                    buttonPressed = 0;
+                    currentState = MOVE_RIGHT;
+                }
+                break;
+            case MOVE_RIGHT:
+                setLED(ledPosition);
+                delay(200);
+                if (buttonPressed) {
+                    buttonPressed = 0;
+                    if (ledPosition == 3) {  // Check if the middle LED (P2.3) is selected
+                        currentState = WIN;
+                    } else {
+                        currentState = LOSE;
+                    }
+                } else {
+                    ledPosition++;
+                    if (ledPosition >= 6) {
+                        currentState = MOVE_LEFT;
+                    }
+                }
+                break;
+            case MOVE_LEFT:
+                setLED(ledPosition);
+                delay(200);
+                if (buttonPressed) {
+                    buttonPressed = 0;
+                    if (ledPosition == 3) {  // Check if the middle LED (P2.3) is selected
+                        currentState = WIN;
+                    } else {
+                        currentState = LOSE;
+                    }
+                } else {
+                    ledPosition--;
+                    if (ledPosition <= 0) {
+                        currentState = MOVE_RIGHT;
+                    }
+                }
+                break;
+            case WIN:
+                for (i = 0; i < 25; i++) {  // Loop for 5 seconds (25 * 200ms = 5000ms)
+                    // Pattern 1
+                    P2OUT |= BIT0;  // P2.0 On
+                    P2OUT &= ~BIT1; // P2.1 Off
+                    P2OUT |= BIT2;  // P2.2 On
+                    P2OUT |= BIT3;  // P2.3 (Middle) On
+                    P2OUT |= BIT4;  // P2.4 On
+                    P2OUT &= ~BIT5; // P2.5 Off
+                    P1OUT |= BIT6;  // P1.6 On
+                    delay(200);
+
+                    // Pattern 2
+                    P2OUT &= ~BIT0; // P2.0 Off
+                    P2OUT |= BIT1;  // P2.1 On
+                    P2OUT &= ~BIT2; // P2.2 Off
+                    P2OUT |= BIT3;  // P2.3 (Middle) On
+                    P2OUT &= ~BIT4; // P2.4 Off
+                    P2OUT |= BIT5;  // P2.5 On
+                    P1OUT &= ~BIT6; // P1.6 Off
+                    delay(200);
+                }
+                setAllLEDsOff();  // Turn off all LEDs after the win pattern
+                P2OUT |= BIT3;    // Keep the middle LED (P2.3) on
+                delay(1000);      // Keep the middle LED on for 1 seconds
+                currentState = IDLE;
+                break; //(crazy? I was crazy once;) ( I forgot the break here and spent like 2 hours debugging)
+            case LOSE:
+                delay(1000);  // Hold position for 1 second
+                currentState = IDLE;
+                break;
+        }
+    }
+}
