@@ -166,7 +166,97 @@ export const items: Array<Project> = [
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project1/summer_shootings.png', label: 'Summer Plot' },
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project1/winter_shootings.png', label: 'Winter Plot' }
     ]
-  },    
+  },  
+{
+  slug: 'lab5-uart-adc',
+  color: '#8b5cf6ff',
+  description: 'MSP430 program using UART and ADC. Reads analog sensor data and transmits 8-bit values over UART. A button sends a fire command to a connected controller via serial.',
+  shortDescription: 'UART + ADC communication with fire button trigger.',
+  links: [
+    { to: 'https://youtu.be/jHYgZ0sjfCg', label: 'YouTube Demo' },
+    { to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/labs/Zahabiuon_Ash_Lab5.txt', label: 'Source Code' }
+  ],
+  logo: Assets.C,
+  name: 'Lab 5 – UART ADC Controller',
+  period: { from: new Date('2024-08-05') },
+  skills: getSkills('c'),
+  type: 'Embedded Systems',
+  screenshots: [
+    { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Lab5/Lab5_UART.png', label: 'UART ADC Demo' }
+  ]
+},
+{
+  slug: 'lab4-tripwire-alarm',
+  color: '#3b82f6ff',
+  description: 'A tripwire alarm using an ultrasonic sensor, PWM buzzer, and LEDs. The button arms or disarms the system, and the alarm triggers if movement is detected within range.',
+  shortDescription: 'Ultrasonic tripwire alarm with LEDs and PWM buzzer.',
+  links: [
+    { to: 'https://youtu.be/AsoatPVCDps', label: 'YouTube Demo' },
+    { to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/labs/Zahabiuon_Ash_Lab4.txt', label: 'Source Code' }
+  ],
+  logo: Assets.C,
+  name: 'Lab 4 – Tripwire Alarm System',
+  period: { from: new Date('2024-07-17') },
+  skills: getSkills('c'),
+  type: 'Embedded Systems',
+  screenshots: [
+    { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Lab4/Lab4_Alarm.png', label: 'Tripwire Alarm Demo' }
+  ]
+},
+{
+  slug: 'lab3-cyclone-game',
+  color: '#ef4444ff',
+  description: 'Implements a small Cyclone arcade game on the MSP430. LEDs move back and forth until the player presses the button to stop them at the target LED. Win or lose is shown by LED patterns.',
+  shortDescription: 'Cyclone-style LED game using button timing on MSP430.',
+  links: [
+    { to: 'https://www.youtube.com/watch?v=4kC4S-FP-vg', label: 'YouTube Demo' },
+    { to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/labs/Zahabiuon_Ash_Lab3.txt', label: 'Source Code' }
+  ],
+  logo: Assets.C,
+  name: 'Lab 3 – Cyclone Game',
+  period: { from: new Date('2024-07-01') },
+  skills: getSkills('c'),
+  type: 'Embedded Systems',
+  screenshots: [
+    { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Lab3/Lab3_Cyclone.png', label: 'Cyclone Game Demo' }
+  ]
+},
+{
+  slug: 'lab2-led-cycle',
+  color: '#22c55eff',
+  description: 'An MSP430 project that cycles LEDs with a button press. Each press switches between red, green, and both LEDs on, using simple debounce logic.',
+  shortDescription: 'Button-controlled LED cycle with debounce on MSP430.',
+  links: [
+    { to: 'https://youtu.be/9DWMKz36roA', label: 'YouTube Demo' },
+    { to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/labs/Zahabiuon_Ash_Lab2.txt', label: 'Source Code' }
+  ],
+  logo: Assets.C,
+  name: 'Lab 2 – LED Button Cycle',
+  period: { from: new Date('2024-05-26') },
+  skills: getSkills('c'),
+  type: 'Embedded Systems',
+  screenshots: [
+    { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Lab2/Lab2_Cycle.png', label: 'LED Cycle Demo' }
+  ]
+},
+{
+  slug: 'lab1-blinking-led',
+  color: '#facc15ff',
+  description: 'A simple MSP430 program that blinks an LED using GPIO control. Demonstrates basic output pin setup, direction configuration, and delay loop operation for LED toggling.',
+  shortDescription: 'MSP430 blinking LED using GPIO toggle and delay loop.',
+  links: [
+    { to: 'https://youtu.be/3TEgFfDGL5Y', label: 'YouTube Demo' },
+    { to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/labs/Zahabiuon_Ash_Lab1.txt', label: 'Source Code' }
+  ],
+  logo: Assets.C,
+  name: 'Lab 1 – Blinking LED',
+  period: { from: new Date('2024-05-26') },
+  skills: getSkills('c'),
+  type: 'Embedded Systems',
+  screenshots: [
+    { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Lab1/Lab1_Blink.png', label: 'LED Blink Demo' }
+  ]
+},
   {
     slug: 'roblox-iphone',
     color: '#999999',
