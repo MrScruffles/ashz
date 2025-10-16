@@ -22,6 +22,25 @@ export const items: Array<Project> = [
     ]
   },
   {
+    slug: 'discord-bot-relay',
+    color: '#00ADD8',
+    description: 'A secure GoLang service that replaced traditional webhooks with a custom Discord bot. The original webhook system faced repeated unauthorized message injection and spam attempts, so the architecture was redesigned as a rate-limited relay bot with no direct permissions except sending messages. The service accepts channel IDs and authorization keys, validates them, and transmits JSON-encoded embeds safely to Discord. It includes built-in rate limit handling, @everyone mention protection, and Firebase integration for organizational data management.',
+    shortDescription: 'Secure GoLang relay bot replacing webhooks with key-based channel messaging and rate-limit protection.',
+    links: [
+      { to: '#', label: '(Private) GitHub' }
+    ],
+    logo: Assets.Go,
+    name: 'Discord Bot Relay Service',
+    period: { from: new Date('2025-03-10') },
+    skills: getSkills('go'),
+    type: 'Backend & Infrastructure',
+    screenshots: [
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/GoLang/CPU_MEM_Consumption.png', label: 'CPU & Memory Usage' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/GoLang/NetworkImage.png', label: 'Network Flow Visualization' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/GoLang/SubMSResponses.png', label: 'Sub-ms Response Test' }
+    ]
+  },
+  {
     slug: 'miroles',
     color: '#2563ebff',
     description: 'React-based internal web app built at Mountain Interactive. It integrates with Firebase to read and visualize production data when native realtime limits are exceeded, and connects to their Invision platform via REST APIs with OAuth2.0 for authentication. The app implements an approval flow and role-based access controls that unlock pages by permission level, audits user actions, and provides a suite of operational pages and tools for game team workflows.',
