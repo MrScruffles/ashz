@@ -31,7 +31,7 @@ export const items: Array<Project> = [
     ],
     logo: Assets.Go,
     name: 'Discord Bot Relay Service',
-    period: { from: new Date('2025-03-10') },
+    period: { from: new Date('2025-06-16') },
     skills: getSkills('go'),
     type: 'Backend & Infrastructure',
     screenshots: [
