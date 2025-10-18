@@ -13,6 +13,16 @@ export const items: Array<Friend> = [
 			{ to: 'https://errorcezar.lol/', label: 'Website' }
 		]
 	},
+	{
+		slug: 'friend-2',
+		name: 'Watameln',
+		logo: Assets.Unknown,
+		shortDescription: 'AntiCheat Developer',
+		description: 'funny guy, that\'s for sure.',
+		links: [
+			{ to: 'https://github.com/watameln', label: 'GitHub' },
+		]
+	},
 ];
 
 export const title = 'Friends';
