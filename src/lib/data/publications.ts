@@ -9,6 +9,7 @@ export const items: Array<Publication> = [
 		shortDescription: 'Research paper on O-RAN architecture and implementation.',
 		description: 'A comprehensive project report exploring O-RAN (Open Radio Access Network) architecture, implementation strategies, and analysis conducted as part of the ECE/CSC 572 course.',
 		links: [
+			{ to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/ORanPaper/ECE_CSC_572_Project_Report.pdf', label: 'View PDF' },
 			{ to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/ORanPaper/ECE_CSC_572_Project_Report.pdf', label: 'Download PDF' }
 		],
 		period: { from: new Date('2025-01-01') },

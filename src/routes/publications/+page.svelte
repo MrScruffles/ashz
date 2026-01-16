@@ -58,9 +58,10 @@
 										href={link.to}
 										target="_blank"
 										rel="noopener noreferrer"
+										download={link.label.includes('Download') ? '' : null}
 										class="publication-link px-3 py-2 rounded-8px text-[0.85em] decoration-none flex items-center gap-2 hover:bg-[var(--main-hover)] border-1px border-solid border-[var(--border)] transition-colors"
 									>
-										<UIcon icon="i-carbon-download" classes="text-1.2em" />
+										<UIcon icon={link.label.includes('Download') ? 'i-carbon-download' : 'i-carbon-view'} classes="text-1.2em" />
 										<span>{link.label}</span>
 									</a>
 								{/each}
