@@ -36,6 +36,15 @@ const defineSkill = <S extends string>(
 
 export const items = [
 	defineSkill({
+			slug: 'bun',
+			color: 'pink', // Or 'white' depending on your UI theme
+			description: 'Bun is a fast, all-in-one JavaScript runtime and toolkit designed for speed. It functions as a bundler, test runner, and package manager compatible with Node.js, significantly optimizing development workflows and execution performance.',
+			logo: Assets.Bun,
+			name: 'Bun',
+			category: 'pro-lang'
+		}),
+
+	defineSkill({
 		slug: 'js',
 		color: 'yellow',
 		description: 'JavaScript is a versatile, high-level programming language commonly used for developing web applications, enabling dynamic interactions on websites. It is an essential skill for front-end development and is increasingly used on the back-end with environments like Node.js.',

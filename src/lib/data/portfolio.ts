@@ -12,7 +12,7 @@ export const items: Array<Project> = [
     logo: Assets.PostgreSQL,
     name: 'CatWatcher',
     period: { from: new Date('2025-08-10') },
-    skills: getSkills('postgresql', 'html', 'js', 'roblox', 'game-development'),
+    skills: getSkills('postgresql', 'html', 'bun', 'roblox', 'game-development'),
     type: 'Full-Stack Development',
     screenshots: [
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherDiscord_Preview.png', label: 'CatWatcher Discord Preview' },

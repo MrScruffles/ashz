@@ -10,6 +10,7 @@ const a = (light: string, dark?: string): Asset =>
 const Assets = {
 	AWS: a('aws.svg'),
 	Bootstrap: a('bootstrap.svg'),
+	Bun: a('bun.svg', 'bun.png'),
 	C: a('c.svg'),
 	Cpp: a('cpp.svg'),
 	Celery: a('celery.svg'),
