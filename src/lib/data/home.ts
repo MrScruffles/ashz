@@ -3,7 +3,7 @@ import { getSkills } from './skills';
 
 export const title = 'Home';
 
-export const name = 'Ash';
+export const name = 'Ashkan';
 
 export const lastName = 'Zahabiuon';
 
