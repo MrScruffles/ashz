@@ -475,7 +475,7 @@ export const items: Array<Project> = [
     slug: 'saultech',
     color: '#007acc',
     description:
-      'C# projects related to SaulTech, focusing on your skills in .NET development and software engineering.',
+      'C# projects related to SaulTech, focused on skills in .NET development and software engineering.',
     shortDescription:
       'C# projects for SaulTech, demonstrating expertise in .NET and software engineering.',
     links: [{ to: '#', label: 'GitHub' }],
