@@ -472,7 +472,7 @@ export const items: Array<Project> = [
     type: 'Backend Development',
   },
   {
-    slug: 'saultech',
+    slug: 'saultech', 
     color: '#007acc',
     description:
       'C# projects related to SaulTech, focused on skills in .NET development and software engineering.',
