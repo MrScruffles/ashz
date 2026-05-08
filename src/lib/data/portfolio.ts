@@ -3,6 +3,125 @@ import { getSkills } from './skills';
 import type { Project } from '../types';
 
 export const items: Array<Project> = [
+    {
+    slug: 'catwatcher',
+    color: '#d83030ff',
+    description: 'Website & API that allows big game developers to easily integrate the catwatcher system in game. Which checks if a player has used or is using cheats. This also includes a full backend system with a dashboard for developers to manage their games and view stats, along with having a discord bot & a chrome extension for users to easily view profiles. There is also a active database that is always increasing, as the system is being used more and more by users which indexes these cheaters and finds their RBX accounts which get added to the database. The postgreSQL database is used to store all of the data for the website, API, dashboard, and discord bot, which also are used to add whitelisted users, developers, and api information (total requests, ratelimit, and request cap, etc).',
+    shortDescription: 'Catwatcher system integration for game developers, that has an API, dashboard, discord bot, and chrome extension.',
+    links: [{ to: 'https://catwatcher.org/', label: 'Catwatcher Website' }],
+    logo: Assets.PostgreSQL,
+    name: 'CatWatcher',
+    period: { from: new Date('2025-08-10') },
+    skills: getSkills('postgresql', 'html', 'bun', 'roblox', 'game-development'),
+    type: 'Full-Stack Development',
+    screenshots: [
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherDiscord_Preview.png', label: 'CatWatcher Discord Preview' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherWebsite_Preview.png', label: 'CatWatcher Website Preview' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherDashboard.png', label: 'CatWatcher Dashboard Preview' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherExtension_Video.mp4', label: 'Video' , thumbnail: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CatWatcher/CatWatcherExtension_Thumbnail.png' },
+    ]
+  },
+  {
+    slug: 'discord-bot-relay',
+    color: '#00ADD8',
+    description: 'A secure GoLang service that replaced traditional webhooks with a custom Discord bot. The original webhook system faced repeated unauthorized message injection and spam attempts, so the architecture was redesigned as a rate-limited relay bot with no direct permissions except sending messages. The service accepts channel IDs and authorization keys, validates them, and transmits JSON-encoded embeds safely to Discord. It includes built-in rate limit handling, @everyone mention protection, and Firebase integration for organizational data management.',
+    shortDescription: 'Secure GoLang relay bot replacing webhooks with key-based channel messaging and rate-limit protection.',
+    links: [
+      { to: '#', label: '(Private) GitHub' }
+    ],
+    logo: Assets.Go,
+    name: 'Discord Bot Relay Service',
+    period: { from: new Date('2025-06-16') },
+    skills: getSkills('go'),
+    type: 'Backend & Infrastructure',
+    screenshots: [
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/GoLang/CPU_MEM_Consumption.png', label: 'CPU & Memory Usage' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/GoLang/NetworkImage.png', label: 'Network Flow Visualization' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/GoLang/SubMSResponses.png', label: 'Sub-ms Response Test' }
+    ]
+  },
+  {
+    slug: 'miroles',
+    color: '#2563ebff',
+    description: 'React-based internal web app built at Mountain Interactive. It integrates with Firebase to read and visualize production data when native realtime limits are exceeded, and connects to their Invision platform via REST APIs with OAuth2.0 for authentication. The app implements an approval flow and role-based access controls that unlock pages by permission level, audits user actions, and provides a suite of operational pages and tools for game team workflows.',
+    shortDescription: 'React web app for Mountain Interactive with Firebase data views, OAuth2.0 login to Invision, RBAC, audit logging, and game ops tools.',
+    links: [{ to: 'https://miroles.com/', label: 'MIRoles Website' }],
+    logo: Assets.ReactJs,
+    name: 'MIRoles',
+    period: { from: new Date('2025-5-13') },
+    skills: getSkills('reactjs', 'firebase', 'html', 'js', 'rest', 'oauth2'),
+    type: 'Frontend & Backend Integrations',
+    screenshots: [
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesDashboard.png', label: 'MIRoles Dashboard' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesGameAdminOverview.png', label: 'MIRoles Game Admin Overview' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesGameAdminOverview2.png', label: 'MIRoles Game Admin Overview 2' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesMoneyLeaderboards.png', label: 'MIRoles Money Leaderboards' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesSystemLogs.png', label: 'MIRoles System Logs' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesUserDataEditor.png', label: 'MIRoles User Data Editor' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/MIRoles/MIRolesXPLeaderboard.png', label: 'MIRoles XP Leaderboard' }
+    ]
+  },
+  {
+    slug: 'course-enrollment-feedback',
+    color: '#b91c1cff',
+    description: 'Full-stack academic project developed for the CSC 517: Object-Oriented Design and Development course at North Carolina State University. The system enables administrators to manage courses, students, and feedback through a structured Ruby-based backend and HTML interface. It supports user authentication, enrollment workflows, and a dynamic feedback module allowing students to rate and review courses. Administrators can view all submissions in an organized dashboard, track course-level statistics, and monitor participation trends. The project demonstrates strong adherence to MVC principles, modular Ruby design, and database-backed form handling following Rails conventions.',
+    shortDescription: 'Ruby and HTML-based academic course management system for CSC 517 at NCSU, supporting enrollments, feedback, and admin dashboards.',
+    links: [{ to: 'https://github.ncsu.edu/vpatel29/oodd_program_2', label: 'GitHub Repository' }],
+    logo: Assets.Ruby,
+    name: 'Course Enrollment & Feedback System',
+    period: { from: new Date('2025-10-03') },
+    skills: getSkills('ruby', 'html', 'css', 'js', 'sqlite'),
+    type: 'Academic',
+    screenshots: [
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/MainDashboard.png', label: 'Main Dashboard' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/OverviewPage.png', label: 'Overview Page' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/AdminDashboard.png', label: 'Admin Dashboard' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/Admin_CoursesPage.png', label: 'Courses Management Page' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/Admin_StudentsPage.png', label: 'Students Management Page' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/Admin_FeedbackPage.png', label: 'Feedback Management Page' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/Admin_LogsPage.png', label: 'Admin Logs' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/CSC517/StudentsCourses_Page.png', label: 'Student Courses Page' }
+    ]
+  },
+  {
+    slug: 'customizable-belt-system',
+    color: '#0ea5aaff',
+    description: 'An advanced Roblox system integrating 3D DragDetectors to allow fully interactive belt customization directly within the game world. Players can drag, snap, and attach equipment dynamically to their character belts, simulating a modular tactical gear setup. The system combines precise spatial interaction with real-time physics validation, ensuring smooth placement and realistic behavior for tools and accessories. Designed for roleplay and simulation experiences, it provides both developers and players with a production-grade, intuitive interface that bridges UI and in-world customization. Inspired by in-engine demonstrations such as the official DragDetector showcase, this system expands the boundaries of player interaction in Roblox environments.',
+    shortDescription: 'Roblox belt customization system using 3D DragDetectors for interactive, modular gear attachment.',
+    links: [
+      { to: 'https://youtu.be/ssGkDTBpfNk', label: 'YouTube Showcase' },
+      { to: 'https://create.roblox.com/docs/ui/3D-drag-detectors', label: 'Roblox DragDetector Docs' }
+    ],
+    logo: Assets.LuaU,
+    name: 'Customizable Belt System',
+    period: { from: new Date('2025-12-03') },
+    skills: getSkills('luau'),
+    type: 'Gameplay Systems',
+    screenshots: [
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/BeltSystem/ShowcaseOne.png', label: 'DragDetector Gear Interaction' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/BeltSystem/ShowcaseTwo.png', label: 'Belt Customization Demo' }
+    ]
+  },
+  {
+    slug: 'invision-community-plugin',
+    color: '#0ea5aaff',
+    description: 'A production-grade Invision Community plugin developed entirely in PHP, designed to extend the native platform with a custom REST API for game developer integration. It exposes endpoints for purchase data, account details, and subscription information, allowing external systems to authenticate users and synchronize in-game purchases seamlessly. The plugin also implements RBX OAuth 2.0 to link accounts directly within user profiles, enabling a unified login and purchase experience between the forum and game environment. With secure token-based access, rate limits, and consistent JSON schema, it ensures reliable data flow between Invision and third-party systems.',
+    shortDescription: 'PHP Invision plugin exposing a REST API for purchases, account info, subscriptions, and RBX OAuth 2.0 profile linking.',
+    links: [
+      { to: 'https://invisioncommunity.com/forums/', label: 'Invision Community Forums' },
+      { to: 'https://invisioncommunity.com/developers/rest-api/index/', label: 'Invision REST API Docs' }
+    ],
+    logo: Assets.PHP,
+    name: 'Invision Community Plugin',
+    period: { from: new Date('2024-01-29') },
+    skills: getSkills('php'),
+    type: 'Backend Integrations',
+    screenshots: [
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/InvisionCommunityPlugin/InvisionAPIPage.png', label: 'Invision API Page' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/InvisionCommunityPlugin/APIOutput_1.png', label: 'API Output – Purchases & Account' },
+      { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/InvisionCommunityPlugin/APIOutput_2.png', label: 'API Output – Subscriptions' }
+    ]
+  },
   {
     slug: 'regression-health-insurance',
     color: '#ff8b00',
@@ -66,7 +185,97 @@ export const items: Array<Project> = [
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project1/summer_shootings.png', label: 'Summer Plot' },
       { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Project1/winter_shootings.png', label: 'Winter Plot' }
     ]
-  },    
+  },  
+{
+  slug: 'lab5-uart-adc',
+  color: '#8b5cf6ff',
+  description: 'MSP430 program using UART and ADC. Reads analog sensor data and transmits 8-bit values over UART. A button sends a fire command to a connected controller via serial.',
+  shortDescription: 'UART + ADC communication with fire button trigger.',
+  links: [
+    { to: 'https://youtu.be/jHYgZ0sjfCg', label: 'YouTube Demo' },
+    { to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/labs/Zahabiuon_Ash_Lab5.txt', label: 'Source Code' }
+  ],
+  logo: Assets.C,
+  name: 'Lab 5 – UART ADC Controller',
+  period: { from: new Date('2024-08-05') },
+  skills: getSkills('c'),
+  type: 'Embedded Systems',
+  screenshots: [
+    { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Lab5/Lab5_UART.png', label: 'UART ADC Demo' }
+  ]
+},
+{
+  slug: 'lab4-tripwire-alarm',
+  color: '#3b82f6ff',
+  description: 'A tripwire alarm using an ultrasonic sensor, PWM buzzer, and LEDs. The button arms or disarms the system, and the alarm triggers if movement is detected within range.',
+  shortDescription: 'Ultrasonic tripwire alarm with LEDs and PWM buzzer.',
+  links: [
+    { to: 'https://youtu.be/AsoatPVCDps', label: 'YouTube Demo' },
+    { to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/labs/Zahabiuon_Ash_Lab4.txt', label: 'Source Code' }
+  ],
+  logo: Assets.C,
+  name: 'Lab 4 – Tripwire Alarm System',
+  period: { from: new Date('2024-07-17') },
+  skills: getSkills('c'),
+  type: 'Embedded Systems',
+  screenshots: [
+    { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Lab4/Lab4_Alarm.png', label: 'Tripwire Alarm Demo' }
+  ]
+},
+{
+  slug: 'lab3-cyclone-game',
+  color: '#ef4444ff',
+  description: 'Implements a small Cyclone arcade game on the MSP430. LEDs move back and forth until the player presses the button to stop them at the target LED. Win or lose is shown by LED patterns.',
+  shortDescription: 'Cyclone-style LED game using button timing on MSP430.',
+  links: [
+    { to: 'https://www.youtube.com/watch?v=4kC4S-FP-vg', label: 'YouTube Demo' },
+    { to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/labs/Zahabiuon_Ash_Lab3.txt', label: 'Source Code' }
+  ],
+  logo: Assets.C,
+  name: 'Lab 3 – Cyclone Game',
+  period: { from: new Date('2024-07-01') },
+  skills: getSkills('c'),
+  type: 'Embedded Systems',
+  screenshots: [
+    { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Lab3/Lab3_Cyclone.png', label: 'Cyclone Game Demo' }
+  ]
+},
+{
+  slug: 'lab2-led-cycle',
+  color: '#22c55eff',
+  description: 'An MSP430 project that cycles LEDs with a button press. Each press switches between red, green, and both LEDs on, using simple debounce logic.',
+  shortDescription: 'Button-controlled LED cycle with debounce on MSP430.',
+  links: [
+    { to: 'https://youtu.be/9DWMKz36roA', label: 'YouTube Demo' },
+    { to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/labs/Zahabiuon_Ash_Lab2.txt', label: 'Source Code' }
+  ],
+  logo: Assets.C,
+  name: 'Lab 2 – LED Button Cycle',
+  period: { from: new Date('2024-05-26') },
+  skills: getSkills('c'),
+  type: 'Embedded Systems',
+  screenshots: [
+    { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Lab2/Lab2_Cycle.png', label: 'LED Cycle Demo' }
+  ]
+},
+{
+  slug: 'lab1-blinking-led',
+  color: '#facc15ff',
+  description: 'A simple MSP430 program that blinks an LED using GPIO control. Demonstrates basic output pin setup, direction configuration, and delay loop operation for LED toggling.',
+  shortDescription: 'MSP430 blinking LED using GPIO toggle and delay loop.',
+  links: [
+    { to: 'https://youtu.be/3TEgFfDGL5Y', label: 'YouTube Demo' },
+    { to: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/labs/Zahabiuon_Ash_Lab1.txt', label: 'Source Code' }
+  ],
+  logo: Assets.C,
+  name: 'Lab 1 – Blinking LED',
+  period: { from: new Date('2024-05-26') },
+  skills: getSkills('c'),
+  type: 'Embedded Systems',
+  screenshots: [
+    { src: 'https://raw.githubusercontent.com/MrScruffles/ashz/main/static/screenshots/Lab1/Lab1_Blink.png', label: 'LED Blink Demo' }
+  ]
+},
   {
     slug: 'roblox-iphone',
     color: '#999999',
@@ -257,16 +466,16 @@ export const items: Array<Project> = [
     logo: Assets.JavaScript,
     name: 'MountWare',
     period: {
-      from: new Date(),
+      from: new Date('2023-02-26'),
     },
     skills: getSkills('js', 'backend'),
     type: 'Backend Development',
   },
   {
-    slug: 'saultech',
+    slug: 'saultech', 
     color: '#007acc',
     description:
-      'C# projects related to SaulTech, focusing on your skills in .NET development and software engineering.',
+      'C# projects related to SaulTech, focused on skills in .NET development and software engineering.',
     shortDescription:
       'C# projects for SaulTech, demonstrating expertise in .NET and software engineering.',
     links: [{ to: '#', label: 'GitHub' }],

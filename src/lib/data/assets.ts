@@ -10,6 +10,7 @@ const a = (light: string, dark?: string): Asset =>
 const Assets = {
 	AWS: a('aws.svg'),
 	Bootstrap: a('bootstrap.svg'),
+	Bun: a('bun.svg', 'bun.png'),
 	C: a('c.svg'),
 	Cpp: a('cpp.svg'),
 	Celery: a('celery.svg'),
@@ -52,6 +53,7 @@ const Assets = {
 	Android: a('android.png'),
 	Angular: a('angular.png'),
 	PostgreSQL: a('postgres.png'),
+	SQLite: a('sqlite.png'),
 	Firebase: a('firebase.png'),
 	Sass: a('sass.png'),
 	Unknown: a('no-img.svg'),

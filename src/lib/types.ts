@@ -80,3 +80,16 @@ export interface Education<S extends string = string> extends Item<S> {
 	subjects: Array<string>;
 	degree: string;
 }
+
+export interface Friend<S extends string = string> extends Item<S> {
+	links: Array<Link>;
+}
+
+export interface Publication<S extends string = string> extends Item<S> {
+	links: Array<Link>;
+	period: {
+		from: Date;
+		to?: Date;
+	};
+	type: string;
+}

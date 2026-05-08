@@ -1,0 +1,162 @@
+/**
+* Name: Ash Zahabiuon
+* Date: 7/17/2024
+* Assignment: Lab 4
+* Youtube: https://youtu.be/AsoatPVCDps
+*
+/**
+* This program:
+* When ran, pressing the button cycles through different states:
+* 1. System armed: GREEN LED on.
+* 2. Tripwire triggered: RED LED on, alarm sounds for 15 seconds or until reset.
+* 3. System disarmed: GREEN LED off, RED LED off, alarm off.
+* Pressing the button:
+* - Arms the system if disarmed.
+* - Disarms the system if armed.
+* - Resets the alarm if it is active.
+*/
+
+
+#include <msp430.h>
+#include <stdbool.h>
+
+// Define button and LED pins
+#define ARM_BUTTON_PIN BIT3 // P1.3
+#define RED_LED_PIN BIT0    // P1.0
+#define GREEN_LED_PIN BIT6  // P1.6
+
+void initGPIO() {
+    // Stop watchdog timer
+    WDTCTL = WDTPW | WDTHOLD;
+
+    // Set the buzzer pin (P2.2) as output
+    P2DIR |= BIT2;
+    P2SEL |= BIT2; // Select Timer_A output
+
+    // Set the trigger pin (P2.1) as output and echo pin (P1.1) as input
+    P2DIR |= BIT1; // TRIG
+    P1DIR &= ~BIT1; // ECHO
+
+    // Set the arm button pin (P1.3) as input
+    P1DIR &= ~ARM_BUTTON_PIN;
+    P1REN |= ARM_BUTTON_PIN; // Enable pull-up/down resistor
+    P1OUT |= ARM_BUTTON_PIN; // Set pull-up resistor
+
+    // Set the LED pins as output
+    P1DIR |= RED_LED_PIN;    // Set P1.0 (RED LED) to output direction
+    P1DIR |= GREEN_LED_PIN;  // Set P1.6 (GREEN LED) to output direction
+
+    // Initialize LEDs to off
+    P1OUT &= ~RED_LED_PIN;
+    P1OUT &= ~GREEN_LED_PIN;
+}
+
+void initTimer() {
+    // Configure Timer_A for PWM on P2.2 (TA1.1)
+    TA1CCR0 = 1000 - 1;           // PWM Period
+    TA1CCTL1 = OUTMOD_7;          // CCR1 reset/set
+    TA1CCR1 = 500;                // CCR1 PWM duty cycle
+    TA1CTL = TASSEL_2 + MC_1;     // SMCLK, up mode
+
+    // Configure Timer_A for ultrasonic sensor
+    TA0CCTL0 = CCIE;            // Enable interrupt
+    TA0CCR0 = 50000;            // Set timer count
+    TA0CTL = TASSEL_2 + MC_1;   // SMCLK, up mode
+}
+
+void setPWMDutyCycle(unsigned int dutyCycle) {
+    TA1CCR1 = dutyCycle; // Set PWM duty cycle
+}
+
+void triggerUltrasonic() {
+    P2OUT |= BIT1; // Set TRIG pin high
+    __delay_cycles(10); // Wait for 10us
+    P2OUT &= ~BIT1; // Set TRIG pin low
+}
+
+unsigned int measureDistance() {
+    unsigned int duration;
+
+    // Send trigger pulse
+    triggerUltrasonic();
+
+    // Wait for echo start
+    while (!(P1IN & BIT1));
+
+    // Measure echo duration
+    TA0CTL |= TACLR; // Clear timer
+    TA0CTL |= MC_2; // Continuous mode
+    while (P1IN & BIT1);
+    duration = TA0R; // Read timer value
+    TA0CTL &= ~MC_2; // Stop timer
+
+    // Calculate distance in cm (assuming 1 MHz clock)
+    unsigned int distance = (duration / 58);
+    return distance;
+}
+
+bool isButtonPressed() {
+    if (!(P1IN & ARM_BUTTON_PIN)) { // If button is pressed
+        __delay_cycles(50000); // Debounce delay
+        if (!(P1IN & ARM_BUTTON_PIN)) { // If button is still pressed
+            return true;
+        }
+    }
+    return false;
+}
+
+void delaySeconds(unsigned int seconds) {
+    while (seconds--) {
+        __delay_cycles(1000000); // Assuming 1 MHz clock, 1 second delay
+        if (isButtonPressed()) {
+            break;
+        }
+    }
+}
+
+int main(void) {
+    initGPIO(); // Initialize GPIO
+    initTimer(); // Initialize Timer
+
+    bool armed = false;
+    unsigned int armedDistance = 0;
+    bool buttonPreviouslyPressed = false;
+    bool alarmActive = false;
+
+    while (1) {
+        if (isButtonPressed()) {
+            if (!buttonPreviouslyPressed) {
+                armed = !armed;
+                if (armed) {
+                    // Measure initial distance when armed
+                    armedDistance = measureDistance();
+                    P1OUT |= GREEN_LED_PIN; // Turn on GREEN LED when armed
+                } else {
+                    alarmActive = false;
+                    setPWMDutyCycle(0); // Turn off the buzzer
+                    P1OUT &= ~GREEN_LED_PIN; // Turn off GREEN LED when disarmed
+                }
+                buttonPreviouslyPressed = true;
+            }
+        } else {
+            buttonPreviouslyPressed = false;
+        }
+
+        if (armed && !alarmActive) {
+            unsigned int currentDistance = measureDistance();
+            if (abs(currentDistance - armedDistance) > 10) { // Significant change detected
+                setPWMDutyCycle(750); // Sound the alarm
+                P1OUT |= RED_LED_PIN; // Turn on RED LED when alarm is active
+                alarmActive = true;
+                delaySeconds(15); // Keep the buzzer on for 15 seconds or until reset
+                alarmActive = false;
+                setPWMDutyCycle(0); // Turn off the buzzer
+                P1OUT &= ~RED_LED_PIN; // Turn off RED LED after alarm
+            }
+        } else {
+            setPWMDutyCycle(0); // Turn off the buzzer when disarmed or alarm is not active
+        }
+
+        __delay_cycles(100000); // Delay between measurements
+    }
+}

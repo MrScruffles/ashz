@@ -36,6 +36,15 @@ const defineSkill = <S extends string>(
 
 export const items = [
 	defineSkill({
+			slug: 'bun',
+			color: 'pink', // Or 'white' depending on your UI theme
+			description: 'Bun is a fast, all-in-one JavaScript runtime and toolkit designed for speed. It functions as a bundler, test runner, and package manager compatible with Node.js, significantly optimizing development workflows and execution performance.',
+			logo: Assets.Bun,
+			name: 'Bun',
+			category: 'pro-lang'
+		}),
+
+	defineSkill({
 		slug: 'js',
 		color: 'yellow',
 		description: 'JavaScript is a versatile, high-level programming language commonly used for developing web applications, enabling dynamic interactions on websites. It is an essential skill for front-end development and is increasingly used on the back-end with environments like Node.js.',
@@ -186,6 +195,24 @@ export const items = [
 		logo: Assets.Jupyter,
 		name: 'Jupyter',
 		category: 'pro-lang'
+	}),
+
+	defineSkill({
+		slug: 'postgresql',
+		color: '#F29111',
+		description: 'PostgreSQL is a powerful, open-source object-relational database system. It is known for its robustness, extensibility, and support for advanced data types and performance optimization features.',
+		logo: Assets.PostgreSQL,
+		name: 'PostgreSQL',
+		category: 'db'
+	}),
+
+	defineSkill({
+		slug: 'sqlite',
+		color: '#003B57',
+		description: 'SQLite is a lightweight, self-contained relational database management system. It is widely used in mobile applications, embedded systems, and small to medium-sized applications due to its simplicity and ease of integration.',
+		logo: Assets.SQLite,
+		name: 'SQLite',
+		category: 'db'
 	}),
 
 ] as const;

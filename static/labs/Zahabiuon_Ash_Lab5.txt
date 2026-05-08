@@ -1,0 +1,95 @@
+/**
+* Name: Ash Zahabiuon
+* Date: 8/5/2024
+* Assignment: Lab 5
+* Youtube: https://youtu.be/jHYgZ0sjfCg
+*
+/**
+* This program initializes UART for serial communication, sets up GPIO for
+* button input, configures ADC to read analog values from a sensor, and
+* transmits the ADC values over UART. It also detects button presses to
+* send a specific fire command over UART when the button is pressed.
+* The ADC values are constrained to 8-bit (0-255) for transmission.
+*
+* - UART is set up for 9600 baud communication.
+* - GPIO pin P1.3 is configured as an input with a pull-up resistor for button detection.
+* - ADC reads the value from channel 4 (P1.4).
+* - ADC values are converted to 8-bit and transmitted over UART.
+* - Top Gun plays using the controller on Com3.
+*/
+
+
+#include <msp430.h>
+
+void initUART() {
+    P1SEL |= BIT1 + BIT2;    // P1.1 = RXD, P1.2=TXD
+    P1SEL2 |= BIT1 + BIT2;   // P1.1 = RXD, P1.2=TXD
+    UCA0CTL1 |= UCSSEL_2;    // SMCLK
+    UCA0BR0 = 104;           // 1MHz 9600
+    UCA0BR1 = 0;             // 1MHz 9600
+    UCA0MCTL = UCBRS0;       // Modulation UCBRSx = 1
+    UCA0CTL1 &= ~UCSWRST;    // Initialize USCI state machine
+    IE2 |= UCA0RXIE;         // Enable USCI_A0 RX interrupt
+}
+
+void UART_Write(unsigned char data) {
+    while (!(IFG2 & UCA0TXIFG)); // Wait for the TX buffer to be ready
+    UCA0TXBUF = data;            // Send data
+}
+
+void initGPIO() {
+    P1DIR &= ~BIT3;   // Set P1.3 as input
+    P1REN |= BIT3;    // Enable pull-up resistor on P1.3
+    P1OUT |= BIT3;    // Set pull-up mode
+}
+
+int isButtonPressed() {
+    return !(P1IN & BIT3);  // Return 1 if button is pressed
+}
+
+void initADC() {
+    ADC10CTL1 = INCH_4;                    // Channel 4 (P1.4)
+    ADC10AE0 |= BIT4;                      // Enable ADC input on P1.4
+    ADC10CTL0 = SREF_0 + ADC10SHT_2 + ADC10ON; // Vcc & Vss as reference, 16 x ADC10CLKs, ADC ON
+}
+
+unsigned int readADC() {
+    ADC10CTL0 |= ENC + ADC10SC;            // Sampling and conversion start
+    while (ADC10CTL1 & ADC10BUSY);         // Wait for conversion to complete
+    return ADC10MEM;                       // Return conversion result
+}
+
+int debounceButton() {
+    if (isButtonPressed()) {
+        __delay_cycles(1000); // Delay to debounce
+        if (isButtonPressed()) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+void main(void) {
+    WDTCTL = WDTPW + WDTHOLD;    // Stop WDT
+    initUART();
+    initGPIO();
+    initADC();
+
+    int buttonPressed = 0;
+
+    while (1) {
+        unsigned int adcValue = readADC();
+        if (adcValue > 255) adcValue = 254; // Handle 10-bit to 8-bit conversion
+        UART_Write(adcValue);               // Send ADC value
+
+        // Fire command in a separate loop with debounce
+        if (debounceButton()) {
+            if (!buttonPressed) {
+                UART_Write(255);           // Send fire command
+                buttonPressed = 1;         // Mark button as pressed
+            }
+        } else {
+            buttonPressed = 0;             // Reset button press state when button is released
+        }
+    }
+}

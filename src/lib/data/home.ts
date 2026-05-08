@@ -3,14 +3,17 @@ import { getSkills } from './skills';
 
 export const title = 'Home';
 
-export const name = 'Ash';
+export const name = 'Ashkan';
 
 export const lastName = 'Zahabiuon';
 
 export const description = "I'm a UNCC graduate with a B.S. in Computer Science and Computer Engineering, and an NCSU graduate with a Master of Computer Science!"
 
 export const links: Array<{ platform: Platform; link: string }> = [
-	{ platform: Platform.GitHub, link: 'https://github.com/MrScruffles/' },
+	{ 
+		platform: Platform.GitHub, 
+		link: 'https://github.com/MrScruffles/' 
+	},
 	{
 		platform: Platform.Linkedin,
 		link: 'https://www.linkedin.com/in/ashkan-zahabiuon/'
@@ -24,4 +27,5 @@ export const links: Array<{ platform: Platform; link: string }> = [
 		link: 'https://www.youtube.com/@AshiDivision'
 	},
 ]
-export const skills = getSkills('js', 'css', 'html', 'reactjs', 'sass', 'svelte', 'ts');
+
+export const skills = getSkills('luau', 'reactjs', 'postgresql', 'lua', 'ruby', 'js', 'css', 'html', 'reactjs', 'sass', 'svelte', 'ts');
