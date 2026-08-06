@@ -78,6 +78,10 @@ const Assets = {
 	LuaU: a('luau.svg'),
 	Jupyter: a('jupyter.svg'),
 	Ruby: a('ruby.svg'),
+
+	// Schools //
+	NCSU: a('ncsu.svg'),
+	UNCC: a('uncc.svg'),
 };
 
 export default Assets;

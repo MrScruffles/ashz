@@ -3,11 +3,23 @@ import type { Education } from '../types';
 
 export const items: Array<Education> = [
     {
+        degree: 'Master of Business Administration',
+        description: 'Graduating May 2028',
+        location: 'Raleigh, NC, USA',
+        logo: Assets.NCSU,
+        name: 'Zahabiuon, Ashkan',
+        organization: 'North Carolina State University',
+        period: { from: new Date(2026, 8, 5), to: new Date(2028, 4, 1) },
+        shortDescription: 'Master of Business Administration',
+        slug: 'nc-state-business-administration-masters',
+        subjects: ['Leadership', 'Marketing', 'Finance', 'Operations Management', 'Entrepreneurship', 'Business Analytics', 'Strategic Management', 'Organizational Behavior']
+    },
+    {
         degree: 'Master of Computer Science',
         description: 'Graduated May 2026',
         location: 'Raleigh, NC, USA',
-        logo: Assets.Unknown,
-        name: 'Zahabiuon, Ash',
+        logo: Assets.UNCC,
+        name: 'Zahabiuon, Ashkan',
         organization: 'North Carolina State University',
         period: { from: new Date(2025, 7, 1), to: new Date(2026, 4, 1) },
         shortDescription: 'Master of Computer Science',
@@ -18,8 +30,8 @@ export const items: Array<Education> = [
         degree: 'Bachelor of Science in Computer Science',
         description: 'Graduated May 2025',
         location: 'Charlotte, NC, USA',
-        logo: Assets.Unknown,
-        name: 'Zahabiuon, Ash',
+        logo: Assets.UNCC,
+        name: 'Zahabiuon, Ashkan',
         organization: 'University of North Carolina at Charlotte',
         period: { from: new Date(2022, 7, 1), to: new Date(2025, 5, 1) },
         shortDescription: 'Major: Computer Science | Minor: Computer Engineering',
