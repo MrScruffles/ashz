@@ -82,6 +82,7 @@ const Assets = {
 	// Schools //
 	NCSU: a('ncsu.svg'),
 	UNCC: a('uncc.svg'),
+	MyersPark: a('myerspark.svg'),
 };
 
 export default Assets;
