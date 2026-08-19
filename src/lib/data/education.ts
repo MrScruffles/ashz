@@ -18,7 +18,7 @@ export const items: Array<Education> = [
         degree: 'Master of Computer Science',
         description: 'Graduated May 2026',
         location: 'Raleigh, NC, USA',
-        logo: Assets.UNCC,
+        logo: Assets.NCSU,
         name: 'Zahabiuon, Ashkan',
         organization: 'North Carolina State University',
         period: { from: new Date(2025, 7, 1), to: new Date(2026, 4, 1) },
