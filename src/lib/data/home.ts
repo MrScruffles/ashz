@@ -7,7 +7,7 @@ export const name = 'Ashkan';
 
 export const lastName = 'Zahabiuon';
 
-export const description = "NC State MBA Candidate with a Master of Computer Science from NCSU and a B.S. in Computer Science & Computer Engineering from UNCC!";
+export const description = "I’m an MBA Candidate at NC State, holding a Master of Computer Science from NCSU and a B.S. in Computer Science and Computer Engineering from UNC Charlotte!";
 
 export const links: Array<{ platform: Platform; link: string }> = [
 	{ 
