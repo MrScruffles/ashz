@@ -22,10 +22,6 @@ export const links: Array<{ platform: Platform; link: string }> = [
 		platform: Platform.Email,
 		link: 'contact@ashz.org'
 	},
-	// {
-	// 	platform: Platform.Youtube,
-	// 	link: 'https://www.youtube.com/@AshiDivision'
-	// },
 ]
 
 export const skills = getSkills('luau', 'reactjs', 'postgresql', 'lua', 'ruby', 'js', 'css', 'html', 'reactjs', 'sass', 'svelte', 'ts');
