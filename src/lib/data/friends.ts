@@ -23,6 +23,17 @@ export const items: Array<Friend> = [
 			{ to: 'https://github.com/watameln', label: 'GitHub' },
 		]
 	},
+	{
+		slug: 'friend-3',
+		name: 'Haydz6',
+		logo: Assets.Unknown,
+		shortDescription: 'Developer',
+		description: 'made epic plugin roqol',
+		links: [
+			{ to: 'https://github.com/Haydz6', label: 'GitHub' },
+			{ to: 'https://roqol.io/', label: 'Website' }
+		]
+	},
 ];
 
 export const title = 'Friends';
