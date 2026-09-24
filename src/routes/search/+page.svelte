@@ -5,6 +5,7 @@
 	import { base } from '$app/paths';
 	import * as experiences from '@data/experience';
 	import * as portfolio from '@data/portfolio';
+	import * as projects from '@data/projects';
 	import * as skills from '@data/skills';
 
 	import type { Icon, Item, Skill } from '$lib/types';
@@ -38,9 +39,18 @@
 		result.push(
 			...filterItemsByQuery(portfolio.items, query).map<SearchResultItem>((data) => ({
 				data,
+				icon: 'i-carbon-portfolio',
+				name: `${data.name} @ ${data.company}`,
+				to: `portfolio/${data.slug}`
+			}))
+		);
+
+		result.push(
+			...filterItemsByQuery(projects.items, query).map<SearchResultItem>((data) => ({
+				data,
 				icon: 'i-carbon-cube',
 				name: data.name,
-				to: `portfolio/${data.slug}`
+				to: `projects/${data.slug}`
 			}))
 		);
 

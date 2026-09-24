@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { title } from '@data/skills';
 	import * as portfolio from '@data/portfolio';
+	import * as projects from '@data/projects';
 	import * as experiences from '@data/experience';
 
 	import { base } from '$app/paths';
@@ -21,7 +22,7 @@
 		display: string;
 		name: string;
 		img: string;
-		type: 'portfolio' | 'experience';
+		type: 'portfolio' | 'projects' | 'experience';
 		url: string;
 	};
 
@@ -40,10 +41,22 @@
 			if (item.skills.some((tech) => tech.slug === skill.slug)) {
 				out.push({
 					img: getAssetURL(item.logo),
-					display: `${item.name} (${item.type})`,
+					display: `${item.name} @ ${item.company}`,
 					name: item.name,
 					type: 'portfolio',
 					url: `/portfolio/${item.slug}`
+				});
+			}
+		});
+
+		projects.items.forEach((item) => {
+			if (item.skills.some((tech) => tech.slug === skill.slug)) {
+				out.push({
+					img: getAssetURL(item.logo),
+					display: `${item.name} (${item.type})`,
+					name: item.name,
+					type: 'projects',
+					url: `/projects/${item.slug}`
 				});
 			}
 		});

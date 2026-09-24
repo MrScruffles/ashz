@@ -69,6 +69,19 @@ export interface Experience<S extends string = string> extends Project<S> {
 	contract: ContractType;
 }
 
+export interface PortfolioItem<S extends string = string> extends Experience<S> {
+	stats?: Array<PortfolioStat>;
+}
+
+export interface PortfolioStat {
+	label: string;
+	value: string;
+	live?: {
+		universeIds: Array<number>;
+		field: 'visits' | 'favoritedCount';
+	};
+}
+
 export interface Education<S extends string = string> extends Item<S> {
 	organization: string;
 	location: string;

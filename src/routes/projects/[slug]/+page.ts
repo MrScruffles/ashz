@@ -1,11 +1,11 @@
-import { items } from '@data/portfolio';
+import { items } from '@data/projects';
 
 export function load({ params }: { params: Record<string, string> }) {
 	if (params.slug) {
-		const experience = items.find((item) => {
+		const project = items.find((item) => {
 			return item.slug === params.slug;
 		});
 
-		return { experience };
+		return { project };
 	}
 }

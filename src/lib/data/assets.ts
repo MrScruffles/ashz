@@ -78,6 +78,10 @@ const Assets = {
 	LuaU: a('luau.svg'),
 	Jupyter: a('jupyter.svg'),
 	Ruby: a('ruby.svg'),
+	ReactStudios: a('reactstudios.svg'),
+	DeltaRing2: a('deltaring2.svg'),
+	Redliner: a('redliner.svg'),
+	SniperDuels: a('sniperduels.svg'),
 
 	// Schools //
 	NCSU: a('ncsu.svg'),

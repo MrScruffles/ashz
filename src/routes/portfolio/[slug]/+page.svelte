@@ -2,7 +2,9 @@
 	import { base } from '$app/paths';
 	import { getAssetURL } from '$lib/data/assets';
 	import { title } from '@data/portfolio';
-	import type { Project } from '$lib/types';
+	import { getTimeDiff } from '$lib/utils';
+
+	import type { PortfolioItem, PortfolioStat } from '$lib/types';
 
 	import CardLogo from '$lib/components/Card/CardLogo.svelte';
 	import MainTitle from '$lib/components/MainTitle/MainTitle.svelte';
@@ -12,51 +14,52 @@
 	import Banner from '$lib/components/Banner/Banner.svelte';
 	import UIcon from '$lib/components/Icon/UIcon.svelte';
 	import CardDivider from '$lib/components/Card/CardDivider.svelte';
-	import Screenshot from '$lib/components/Screenshot/Screenshot.svelte';
 
-	export let data: { project?: Project };
+	export let data: { experience?: PortfolioItem; stats: Record<string, Array<PortfolioStat>> };
 
-	const screenshots = data.project?.screenshots ?? [];
+	$: stats = data.experience ? data.stats[data.experience.slug] ?? [] : [];
 
-	let showVideos: boolean[] = [];
-	let screenIndex: number | undefined = undefined;
-
-	// Process the description to replace \n\n with <br> tags
-	const formatDescription = (description: string | undefined): string => {
-		if (!description) return "";
-		// Replace instances of \n\n with <br>
-		return description.replace(/\n\n/g, '<br><br>');
-	};
-
-	$: screenshot =
-		typeof screenIndex !== 'undefined' && screenshots[screenIndex]
-			? screenshots[screenIndex]
-			: undefined;
-
-	$: computedTitle = data.project ? `${data.project.name} - ${title}` : title;
+	$: computedTitle = data.experience ? `${data.experience.name} - ${title}` : title;
 </script>
 
 <TabTitle title={computedTitle} />
 
 <div class="pb-10 overflow-x-hidden col flex-1">
-	{#if data.project === undefined}
+	{#if data.experience === undefined}
 		<div class="p-5 col-center gap-3 m-y-auto text-[var(--accent-text)]">
 			<UIcon icon="i-carbon-cube" classes="text-3.5em" />
-			<p class="font-300">Could not load project data...</p>
+			<p class="font-300">Could not load experience data...</p>
 		</div>
 	{:else}
 		<div class="flex flex-col items-center overflow-x-hidden">
-			<Banner img={getAssetURL(data.project.logo)}>
+			<Banner img={getAssetURL(data.experience.logo)}>
 				<div class="col-center p-y-20">
 					<div class="text-0.9em">
-						<MainTitle>{data.project.name}</MainTitle>
+						<MainTitle>{data.experience.name}</MainTitle>
 					</div>
-					<p class="font-300 text-center text-[var(--tertiary-text)] m-y-2">{data.project.type}</p>
+					<p class="font-300 text-[var(--tertiary-text)] m-y-2 text-center">
+						{data.experience.company} · {data.experience.location} · {data.experience.type}
+					</p>
+					<p class="font-300 text-0.9em text-[var(--tertiary-text)] m-y-2 text-center">
+						{getTimeDiff(data.experience.period.from, data.experience.period.to)}
+					</p>
+					{#if stats.length > 0}
+						<div class="row-center flex-wrap gap-3 m-y-3">
+							{#each stats as stat}
+								<div
+									class="col-center px-5 py-3 rounded-10px border-1px border-solid border-[var(--border)]"
+								>
+									<span class="text-1.2em font-700">{stat.value}</span>
+									<span class="text-0.8em font-300 text-[var(--tertiary-text)]">{stat.label}</span>
+								</div>
+							{/each}
+						</div>
+					{/if}
 					<div class="w-75%">
 						<CardDivider />
 					</div>
 					<div class="row-center flex-wrap text-[0.9em] text-[var(--tertiary-text)] m-b-2">
-						{#each data.project.links as item}
+						{#each data.experience.links as item}
 							<Chip href={item.to}>
 								<div class="row-center gap-2">
 									<UIcon icon="i-carbon-link" />
@@ -66,7 +69,7 @@
 						{/each}
 					</div>
 					<div class="row-center flex-wrap m-b-2">
-						{#each data.project.skills as item}
+						{#each data.experience.skills as item}
 							<Chip
 								classes="inline-flex flex-row items-center justify-center"
 								href={`${base}/skills/${item.slug}`}
@@ -86,121 +89,18 @@
 			</Banner>
 			<div class="pt-3 pb-1 overflow-x-hidden w-full">
 				<div class="px-10px m-y-5">
-					{#if data.project.description}
-						<!-- Use the formatted description with <br> handling -->
-						<Markdown content={formatDescription(data.project.description)} />
+					{#if data.experience.description}
+						<Markdown
+							content={data.experience.description ?? 'This place is yet to be filled...'}
+						/>
 					{:else}
 						<div class="p-5 col-center gap-3 m-y-auto text-[var(--border)]">
 							<UIcon icon="i-carbon-text-font" classes="text-3.5em" />
-							<p class="font-300">No description</p>
+							<p class="font-300">No description...</p>
 						</div>
 					{/if}
 				</div>
-				<div class="w-100% m-t-8">
-					<CardDivider />
-				</div>
-				{#if screenshots.length > 0}
-					<div
-						class="px-10px grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 m-t-10"
-					>
-						{#each screenshots as item, index}
-							<!-- Check if the screenshot is a video or an image -->
-							{#if item.src.endsWith('.mp4') || item.src.endsWith('.webm')}
-								<!-- Render the thumbnail for the video -->
-								<div
-									class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px"
-									on:click={() => (screenIndex = index)}
-								>
-									<div
-										class="screenshot aspect-video bg-contain w-100% cursor-pointer"
-										style={`background-image: url(${item.thumbnail});`}
-									/>
-									<p class="text-[var(--tertiary-text)] font-300">{item.label}</p>
-								</div>
-							{:else}
-								<!-- Render the image and open it in a modal on click -->
-								<div
-									class="col-center gap-3 overflow-hidden w-100% h-100% rounded-10px"
-									on:click={() => (screenIndex = index)}
-								>
-									<div
-										class="screenshot aspect-video bg-contain w-100% cursor-pointer"
-										style={`background-image: url(${item.src});`}
-									/>
-									<p class="text-[var(--tertiary-text)] font-300">{item.label}</p>
-								</div>
-							{/if}
-						{/each}
-					</div>
-				{:else}
-					<div class="p-5 col-center gap-3 m-y-auto text-[var(--border)]">
-						<UIcon icon="i-carbon-image" classes="text-3.5em" />
-						<p class="font-300">No screenshots</p>
-					</div>
-				{/if}
 			</div>
 		</div>
 	{/if}
 </div>
-
-<!-- Video or Image modal that opens when clicked -->
-{#if screenshot && screenshot.src.endsWith('.mp4')}
-	<!-- Video modal -->
-	<div class="modal-background" on:click={() => (screenIndex = undefined)}>
-		<div class="modal-content" on:click|stopPropagation>
-			<video class="w-full h-auto" controls autoplay>
-				<source src={screenshot.src} type="video/mp4" />
-				Your browser does not support the video tag.
-			</video>
-		</div>
-		<button class="close-modal" on:click={() => (screenIndex = undefined)}>Close</button>
-	</div>
-{:else if screenshot}
-	<!-- Image modal -->
-	<Screenshot {screenshot} onClose={() => (screenIndex = undefined)} />
-{/if}
-
-<style lang="scss">
-	.screenshot {
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 100%;
-		transition: background-size 200ms;
-
-		&:hover {
-			background-size: 120%;
-		}
-	}
-
-	.modal-background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		background-color: rgba(0, 0, 0, 0.7);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.modal-content {
-		background-color: rgba(0, 0, 0, 0.7);
-		padding: 10px; /* Reduced padding */
-		border-radius: 5px; /* Reduced border size */
-		width: 90%;
-		max-width: 900px;
-		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-	}
-
-	.close-modal {
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		background: none;
-		border: none;
-		color: white;
-		font-size: 2em;
-		cursor: pointer;
-	}
-</style>
