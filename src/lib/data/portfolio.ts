@@ -56,7 +56,7 @@ export const items: Array<PortfolioItem> = [
 		slug: 'sniper-duels',
 		company: 'Locked In Network (SNIPER DUELS)',
 		description:
-			'- Lead anti-cheat development for SNIPER DUELS, a cross-platform FPS (PC, mobile, console) with 397M+ visits and 1.9M+ favorites\n- Built Luau cheat detection and automated enforcement systems that have issued 440K+ successful bans to date\n- Developed and shipped additional gameplay features for a live game serving thousands of concurrent players',
+			'- Anti-cheat development for SNIPER DUELS, a cross-platform FPS (PC, mobile, console) with 397M+ visits and 1.9M+ favorites\n- Built Luau cheat detection and automated enforcement systems that have issued 440K+ successful bans to date\n- Developed and shipped additional gameplay features for a live game serving thousands of concurrent players',
 		contract: ContractType.Contract,
 		type: 'Anti-Cheat & Security',
 		location: 'Remote',
