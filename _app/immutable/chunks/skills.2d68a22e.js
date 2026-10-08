@@ -1,4 +1,4 @@
-import{A as e}from"./index.7ba50f6f.js";const d=`# Svelte
+import{A as e}from"./index.d47d75d4.js";const d=`# Svelte
 
 ---
 
